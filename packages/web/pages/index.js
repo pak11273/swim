@@ -1,11 +1,23 @@
-import Link from "next/link"
-import gql from "graphql-tag"
-import { useQuery } from "@apollo/react-hooks"
-import { useRouter } from "next/router"
+import { Button } from "@swim/shared"
+// import Link from "next/link"
+// import gql from "graphql-tag"
+import styled from "styled-components"
+// import { useQuery } from "@apollo/react-hooks"
+// import { useRouter } from "next/router"
 import { withApollo } from "../apollo/client"
 
-const Index = () => {
-  return <h1>hello</h1>
+// color: ${(props) => props.theme.colors.primary};
+const Masthead = styled.div`
+  color: ${({ theme }) => theme.colors.primary};
+`
+const Index = (props) => {
+  console.log(props)
+  return (
+    <>
+      <Masthead>hello world</Masthead>
+      <Button />
+    </>
+  )
 }
 
 // TODO: Implement when you reach user registration process

@@ -1,0 +1,12 @@
+0 silly argv {
+0 silly argv   _: [ 'add' ],
+0 silly argv   globs: [],
+0 silly argv   lernaVersion: '3.20.2',
+0 silly argv   '$0': 'node_modules\\lerna\\cli.js',
+0 silly argv   pkg: '@shared/trash'
+0 silly argv }
+1 notice cli v3.20.2
+2 verbose rootPath D:\Users\isaac\vagrant\html\PROJECTS\swim
+3 info versioning independent
+4 error Error: 404 Not Found - GET https://registry.npmjs.org/@shared%2ftrash - Not found
+4 error     at D:\Users\isaac\vagrant\html\PROJECTS\swim\node_modules\@evocateur\npm-registry-fetch\check-response.js:104:15

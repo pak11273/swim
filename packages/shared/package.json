@@ -2,12 +2,19 @@
   "name": "@swim/shared",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "module": "src/index.js",
   "private": true,
+  "scripts": {
+    "build": "rimraf dist && tsc"
+  },
   "devDependencies": {
-    "@babel/core": "^7.1.0",
     "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/preset-react": "^7.9.4",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "react": "^16.13.1"
   }
 }

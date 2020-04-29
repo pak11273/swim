@@ -5,9 +5,12 @@
   "module": "src/index.js",
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.1.0",
     "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0"
+  },
+  "dependencies": {
+    "@swim/shared": "^1.0.0"
   }
 }
