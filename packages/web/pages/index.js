@@ -11,14 +11,10 @@ const Masthead = styled.div`
   color: ${({ theme }) => theme.colors.primary};
 `
 const Index = (props) => {
-  console.log(props)
-  return (
-    <>
-      <Masthead>hello world</Masthead>
-      <Button />
-    </>
-  )
+  return <h1>David's Pool Maintenance</h1>
 }
+
+export default withApollo(Index)
 
 // TODO: Implement when you reach user registration process
 
@@ -31,7 +27,8 @@ const Index = (props) => {
 //   }
 // `
 
-// const Index = () => {
+// const Index = () =>
+// {
 //   const router = useRouter()
 //   const { data, loading } = useQuery(ViewerQuery)
 
@@ -60,5 +57,3 @@ const Index = (props) => {
 
 //   return <p>Loading...</p>
 // }
-
-export default withApollo(Index)

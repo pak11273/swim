@@ -5,4 +5,4 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 exports.Button = function () { return react_1.default.createElement("button", null, "button"); };
-//# sourceMappingURL=Button.js.map
+//# sourceMappingURL=Button.story.js.map
