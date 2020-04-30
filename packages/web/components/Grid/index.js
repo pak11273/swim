@@ -1,11 +1,13 @@
 import { Box } from "rebass/styled-components"
 
-export const Container = (props) => {
-  const { maxWidth, position } = props
+export const Grid = (props) => {
+  const { maxWidth, position, bg, gap } = props
   return (
     <Box
       sx={{
-        color: "primary",
+        display: "grid",
+        background: bg,
+        gridGap: 3,
         maxWidth: maxWidth || "100%",
         mx: "auto",
         position: position,
