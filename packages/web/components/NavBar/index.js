@@ -1,5 +1,5 @@
 import { Container, NavButton } from "components"
-import { Flex, Text } from "rebass"
+import { Flex, Text } from "rebass/styled-components"
 
 const navitems = [
   { label: "about", path: "/about" },
@@ -8,15 +8,7 @@ const navitems = [
 
 export const NavBar = (props) => (
   <Container>
-    {console.log("props: ", props)}
-
-    <Flex
-      px={2}
-      height={70}
-      color="white"
-      sx={{ background: "primary" }}
-      alignItems="center"
-    >
+    <Flex px={2} height={70} sx={{ background: "primary" }} alignItems="center">
       <Text p={2} fontWeight="bold">
         DPPools
       </Text>

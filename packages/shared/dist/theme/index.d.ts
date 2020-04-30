@@ -8,6 +8,15 @@ export declare const theme: {
         primary: string;
         secondary: string;
     };
+    background: {
+        background: string;
+        white: string;
+        red: string;
+        green: string;
+        blue: string;
+        primary: string;
+        secondary: string;
+    };
     transitions: {
         cubic: (time: any) => string;
         cubic2: (time: any) => string;
