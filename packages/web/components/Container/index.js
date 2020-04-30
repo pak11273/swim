@@ -3,7 +3,7 @@ import { Box } from "rebass"
 export const Container = (props) => (
   <Box
     sx={{
-      color: "blue",
+      color: "primary",
       maxWidth: props.maxWidth || "100%",
       mx: "auto",
     }}

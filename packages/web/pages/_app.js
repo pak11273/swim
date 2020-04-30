@@ -9,6 +9,7 @@ import { ThemeProvider } from "styled-components"
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
+
     return (
       <>
         <Head>
