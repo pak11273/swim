@@ -4,7 +4,6 @@ const animate = "all 0.2s ease-in-out"
 export const NavBtn = styled.button`
   cursor: pointer;
   color: ${(props) => props.theme.colors.primary};
-  padding: 0 1rem;
   text-transform: uppercase;
 
   text-align: center;
@@ -27,7 +26,7 @@ export const NavBtn = styled.button`
   &:hover {
     cursor: pointer;
     &:before {
-      width: 80%;
+      width: 100%;
       opacity: 1;
     }
   }

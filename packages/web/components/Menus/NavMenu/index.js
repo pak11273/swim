@@ -10,7 +10,7 @@ export const NavMenu = styled.nav`
   height: 200px;
   justify-content: center;
   position: absolute;
-  top: 99px;
+  top: 87px;
   right: 0;
   text-align: left;
   width: 100%;

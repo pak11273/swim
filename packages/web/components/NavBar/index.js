@@ -26,10 +26,21 @@ const links = [
   { label: "Contact", href: "/" },
 ]
 
+const StyledFlex = styled.div`
+  padding: ${(props) => props.padding};
+  display: flex;
+  max-width: 80px;
+  width: 100%;
+  @media (min-width: 640px) {
+    max-width: 280px;
+  }
+`
 const StyledBox = styled(Box)`
   display: none;
+  justify-content: space-evenly;
+  width: 100%;
   @media (min-width: 640px) {
-    display: block;
+    display: flex;
   }
 `
 
@@ -58,14 +69,14 @@ export const NavBar = (props) => {
     <StyledGridArea gridArea="navbar">
       <Wrapper maxWidth="1024px">
         <Logo href="/" />
-        <Flex ref={node}>
+        <StyledFlex ref={node}>
           <StyledBox padding="0 1rem 0 0">
             {links.map((link, i) => (
               <NavBtn key={i}>{link.label}</NavBtn>
             ))}
           </StyledBox>
           <XBurger open={open} setOpen={setOpen} />
-        </Flex>
+        </StyledFlex>
       </Wrapper>
       <NavMenu open={open}>
         {links.map((link, i) => (
