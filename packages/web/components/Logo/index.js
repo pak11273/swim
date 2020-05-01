@@ -13,7 +13,7 @@ const StyledIcon = styled(Home4)`
 export const Logo = ({ href }) => (
   <Link href={href} passHref>
     <StyledLink>
-      <StyledIcon size={32} />
+      <StyledIcon size={48} />
     </StyledLink>
   </Link>
 )
