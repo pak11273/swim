@@ -7,7 +7,7 @@ const StyledLink = styled.a`
 `
 
 const StyledIcon = styled(Home4)`
-  color: blue;
+  color: ${(props) => props.theme.colors.primary};
 `
 
 export const Logo = ({ href }) => (
