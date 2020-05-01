@@ -49,8 +49,7 @@ const StyledBurger = styled.button`
 
 const Icon = ({ open, setOpen }) => {
   return (
-    // <StyledBurger open={open} onClick={() => setOpen(!open)}>
-    <StyledBurger onClick={() => setOpen(!open)}>
+    <StyledBurger open={open} onClick={() => setOpen(!open)}>
       <div />
       <div />
       <div />

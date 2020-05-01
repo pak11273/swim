@@ -3,13 +3,14 @@ import styled from "styled-components"
 export const NavMenu = styled.nav`
   align-items: center;
   background: white;
+  display: flex;
   transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-100%)")};
   transition: transform 0.3s ease-in-out;
   flex-direction: column;
   height: 200px;
   justify-content: center;
   position: absolute;
-  top: 98px;
+  top: 99px;
   right: 0;
   text-align: left;
   width: 100%;
