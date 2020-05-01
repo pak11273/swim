@@ -1,27 +1,10 @@
 import styled from "styled-components"
 
-const useOnClickOutside = (ref, handler) => {
-  React.useEffect(() => {
-    const listener = (event) => {
-      if (!ref.current || ref.current.contains(event.target)) {
-        return
-      }
-      handler(event)
-    }
-    document.addEventListener("mousedown", listener)
-
-    return () => {
-      document.removeEventListener("mousedown", listener)
-    }
-  }, [ref, handler])
-}
-/* transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-  transition: transform 0.3s ease-in-out; */
-
 export const NavMenu = styled.nav`
   align-items: center;
   background: white;
-  display: flex;
+  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-100%)")};
+  transition: transform 0.3s ease-in-out;
   flex-direction: column;
   height: 200px;
   justify-content: center;
@@ -30,6 +13,7 @@ export const NavMenu = styled.nav`
   right: 0;
   text-align: left;
   width: 100%;
+  z-index: -1;
 
   a {
     text-transform: uppercase;

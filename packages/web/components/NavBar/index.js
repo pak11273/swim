@@ -10,6 +10,7 @@ import {
 } from "components"
 
 import styled from "styled-components"
+import { useState } from "react"
 
 const StyledGridArea = styled((props) => <GridArea {...props} />)`
   align-items: center;
@@ -31,26 +32,47 @@ const StyledBox = styled(Box)`
     display: block;
   }
 `
+const useOnClickOutside = (ref, handler) => {
+  React.useEffect(() => {
+    const listener = (event) => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return
+      }
+      handler(event)
+    }
+    document.addEventListener("mousedown", listener)
 
-export const NavBar = (props) => (
-  <StyledGridArea gridArea="navbar">
-    <Wrapper maxWidth="1024px">
-      <Logo href="/" />
-      <Flex>
-        <StyledBox padding="0 1rem 0 0">
-          {links.map((link, i) => (
-            <NavBtn key={i}>{link.label}</NavBtn>
-          ))}
-        </StyledBox>
-        <XBurger />
-      </Flex>
-    </Wrapper>
-    <NavMenu>
-      {links.map((link, i) => (
-        <a key={i} href={link.href}>
-          {link.label}
-        </a>
-      ))}
-    </NavMenu>
-  </StyledGridArea>
-)
+    return () => {
+      document.removeEventListener("mousedown", listener)
+    }
+  }, [ref, handler])
+}
+/* transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
+  transition: transform 0.3s ease-in-out; */
+
+export const NavBar = (props) => {
+  const [open, setOpen] = useState(false)
+  const node = React.useRef()
+  return (
+    <StyledGridArea gridArea="navbar">
+      <Wrapper maxWidth="1024px">
+        <Logo href="/" />
+        <Flex ref={node}>
+          <StyledBox padding="0 1rem 0 0">
+            {links.map((link, i) => (
+              <NavBtn key={i}>{link.label}</NavBtn>
+            ))}
+          </StyledBox>
+          <XBurger open={open} setOpen={setOpen} />
+        </Flex>
+      </Wrapper>
+      <NavMenu open={open}>
+        {links.map((link, i) => (
+          <a key={i} href={link.href}>
+            {link.label}
+          </a>
+        ))}
+      </NavMenu>
+    </StyledGridArea>
+  )
+}
