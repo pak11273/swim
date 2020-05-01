@@ -33,6 +33,7 @@ const StyledBox = styled(Box)`
     display: block;
   }
 `
+
 const useOnClickOutside = (ref, handler) => {
   React.useEffect(() => {
     const listener = (event) => {
@@ -48,12 +49,12 @@ const useOnClickOutside = (ref, handler) => {
     }
   }, [ref, handler])
 }
-/* transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-  transition: transform 0.3s ease-in-out; */
 
 export const NavBar = (props) => {
   const [open, setOpen] = useState(false)
   const node = React.useRef()
+  useOnClickOutside(node, () => setOpen(false))
+
   return (
     <StyledGridArea gridArea="navbar">
       <Wrapper maxWidth="1024px">
