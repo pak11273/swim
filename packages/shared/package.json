@@ -18,6 +18,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "react": "^16.13.1"
+    "react": "^16.13.1",
+    "styled-normalize": "^8.0.7"
   }
 }

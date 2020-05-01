@@ -1,6 +1,6 @@
 export declare const theme: {
+    breakpoints: string[];
     colors: {
-        background: string;
         white: string;
         red: string;
         green: string;
@@ -9,7 +9,6 @@ export declare const theme: {
         secondary: string;
     };
     background: {
-        background: string;
         white: string;
         red: string;
         green: string;
@@ -17,6 +16,15 @@ export declare const theme: {
         primary: string;
         secondary: string;
     };
+    mq: {
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        xxl: string;
+    };
+    space: number[];
     transitions: {
         cubic: (time: any) => string;
         cubic2: (time: any) => string;
