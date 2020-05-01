@@ -4,7 +4,7 @@ export const NavMenu = styled.nav`
   align-items: center;
   background: white;
   display: flex;
-  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-100%)")};
+  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-200%)")};
   transition: transform 0.3s ease-in-out;
   flex-direction: column;
   height: 200px;

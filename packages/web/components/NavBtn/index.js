@@ -1,4 +1,3 @@
-import { darken } from "polished"
 import styled from "styled-components"
 
 const animate = "all 0.2s ease-in-out"
@@ -28,10 +27,8 @@ export const NavBtn = styled.button`
   &:hover {
     cursor: pointer;
     &:before {
-      width: 75%;
+      width: 80%;
       opacity: 1;
     }
   }
 `
-
-// background-color: ${darken(0.5, "#ff0000")};
