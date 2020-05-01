@@ -28,7 +28,7 @@ const Index = (props) => (
           background: "red",
           gridArea: "main",
           width: "100vw",
-          height: "300px",
+          height: "900px",
         }}
       >
         main
