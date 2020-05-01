@@ -11,6 +11,7 @@ const StyledBurger = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
+  margin-right: 30px;
   padding: 0;
   z-index: 10;
 
@@ -21,7 +22,8 @@ const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ open }) => (open ? "black" : "red")};
+    background: ${(props) =>
+      props.open ? props.theme.colors.primary : props.theme.colors.primary};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -39,6 +41,9 @@ const StyledBurger = styled.button`
     :nth-child(3) {
       transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
+  }
+  @media (min-width: 640px) {
+    display: none;
   }
 `
 

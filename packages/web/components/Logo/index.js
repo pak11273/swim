@@ -2,12 +2,13 @@ import { Home4 } from "@styled-icons/remix-line/Home4"
 import Link from "next/link"
 import styled from "styled-components"
 
-const StyledLink = styled.a`
-  color: blue;
-`
+const StyledLink = styled.a``
 
 const StyledIcon = styled(Home4)`
   color: ${(props) => props.theme.colors.primary};
+  &:hover {
+    color: ${(props) => props.theme.colors.secondary};
+  }
 `
 
 export const Logo = ({ href }) => (

@@ -26,7 +26,7 @@ export const NavMenu = styled.nav`
   height: 200px;
   justify-content: center;
   position: absolute;
-  top: 60px;
+  top: 98px;
   right: 0;
   text-align: left;
   width: 100%;
@@ -36,12 +36,12 @@ export const NavMenu = styled.nav`
     padding: 1rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    color: black;
+    color: ${(props) => props.theme.colors.primary};
     text-decoration: none;
     transition: color 0.3s linear;
 
     &:hover {
-      color: #343078;
+      color: ${(props) => props.theme.colors.secondary};
     }
   }
 

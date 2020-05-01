@@ -2,7 +2,7 @@ import { Grid, NavBar } from "components"
 
 const Index = (props) => (
   <>
-    <Grid>
+    <Grid areas={["masthead", "navbar", "main", "footer"]}>
       <div
         style={{
           background: "green",
@@ -32,16 +32,6 @@ const Index = (props) => (
         }}
       >
         main
-      </div>
-      <div
-        style={{
-          background: "yellow",
-          gridArea: "random",
-          width: "100vw",
-          height: "300px",
-        }}
-      >
-        random
       </div>
       <NavBar gridArea="navbar" />
     </Grid>
