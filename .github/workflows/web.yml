@@ -6,8 +6,8 @@ name: Web Deployment
 # events but only if changes were made on a certain path
 on:
   push:
-    branches: 
-      - master
+    paths:
+      - "web/**"    
 jobs:
   build:
     name: Deploy website
