@@ -1,6 +1,12 @@
-import { Grid, NavBar, ScrollTop } from "components"
+import { Box, Grid, Layout, ScrollTop, Section } from "components"
 
+import styled from "styled-components"
 import { useEffect } from "react"
+
+const StyledMasthead = styled(Section)`
+  align-items: center;
+  justify-content: center;
+`
 
 const Index = (props) => {
   useEffect(() => {
@@ -48,6 +54,13 @@ const Index = (props) => {
     return document.removeEventListener("scroll", () => null)
   }, [])
 
+  useEffect(() => {
+    var navbar = document.getElementById("navbar")
+    if (window.scrollY > 100) {
+      navbar.setAttribute("shadow", true)
+    }
+  })
+
   const scrollToTop = () => {
     const element = document.getElementById("container")
     const bodyRect = document.body.getBoundingClientRect()
@@ -58,42 +71,42 @@ const Index = (props) => {
   }
 
   return (
-    <div id="container">
-      <Grid areas={["masthead", "navbar", "main", "footer"]}>
-        <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
-        <div
-          style={{
-            background: "green",
-            gridArea: "masthead",
-            width: "100vw",
-            height: "300px",
-          }}
-        >
-          masthead
-        </div>
-        <div
-          style={{
-            background: "blue",
-            gridArea: "footer",
-            width: "100vw",
-            height: "300px",
-          }}
-        >
-          footer
-        </div>
-        <div
-          style={{
-            background: "red",
-            gridArea: "main",
-            width: "100vw",
-            height: "900px",
-          }}
-        >
-          main
-        </div>
-        <NavBar gridArea="navbar" />
-      </Grid>
-    </div>
+    <Layout title="DP Pools">
+      <div id="container">
+        <Grid areas={["masthead", "navbar", "main", "footer"]}>
+          <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
+          <StyledMasthead>
+            <Box>
+              <h3>FREE ESTIMATES</h3>
+              <h2>DP Pools</h2>
+              <h4>Residential Pool and Spa Services</h4>
+              <h6>Dallas/FtWorth</h6>
+            </Box>
+          </StyledMasthead>
+          <div
+            style={{
+              background: "blue",
+              gridArea: "footer",
+              width: "100vw",
+              height: "300px",
+            }}
+          >
+            footer
+          </div>
+          <div
+            style={{
+              background: "red",
+              gridArea: "main",
+              width: "100vw",
+              height: "900px",
+            }}
+          >
+            main
+          </div>
+          {/* <NavBar id="navbar" gridArea="navbar" /> */}
+        </Grid>
+      </div>
+    </Layout>
   )
 }
 

@@ -20,6 +20,8 @@ const StyledGridArea = styled((props) => <GridArea {...props} />)`
   padding: 1.2rem;
   position: fixed;
   width: 100%;
+  box-shadow: ${(props) =>
+    props.shadow === "true" ? "0 4px 8px black" : "none"};
 `
 const links = [
   { label: "About", href: "/" },
@@ -66,7 +68,7 @@ export const NavBar = (props) => {
   useOnClickOutside(node, () => setOpen(false))
 
   return (
-    <StyledGridArea gridArea="navbar">
+    <StyledGridArea gridArea="navbar" id={props.id}>
       <Wrapper maxWidth="1024px">
         <Logo href="/" />
         <StyledFlex ref={node}>

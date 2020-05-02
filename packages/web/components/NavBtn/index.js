@@ -11,7 +11,7 @@ export const NavBtn = styled.button`
   transition: ${animate};
   position: relative;
   &:before {
-    background: ${(props) => props.theme.colors.primary};
+    background: ${(props) => props.theme.colors.secondary};
     content: "";
     position: absolute;
     bottom: -10px;
@@ -24,6 +24,7 @@ export const NavBtn = styled.button`
   }
 
   &:hover {
+    color: ${(props) => props.theme.colors.secondary};
     cursor: pointer;
     &:before {
       width: 100%;
