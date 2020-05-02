@@ -24,7 +24,7 @@ const StyledGridArea = styled((props) => <GridArea {...props} />)`
     props.shadow === "true" ? "0 4px 8px black" : "none"};
 `
 const links = [
-  { label: "Changes", href: "/" },
+  { label: "Sales", href: "/" },
   { label: "About", href: "/" },
   { label: "Contact", href: "/" },
 ]
