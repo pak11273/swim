@@ -7,7 +7,7 @@ exports.colors = {
     red: "#ff0000",
     green: "#00ff00",
     blue: "#0000ff",
-    primary: "#f29f22",
+    primary: "#1133aa",
     secondary: "#9873dd",
 };
 //# sourceMappingURL=colors.js.map
