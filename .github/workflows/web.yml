@@ -4,13 +4,13 @@ name: Web Deployment
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only if changes were made on a certain path
-on:  
+on:
   push:
-    paths: 
-      - 'packages/web/*'    
+    paths:
+      - "packages/web/**"
 
 jobs:
-  build: 
+  build:
     name: Deploy website
     runs-on: ubuntu-latest
     steps:
@@ -21,18 +21,18 @@ jobs:
           echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
           sudo apt-get update
           sudo apt-get install yarn
-    
+
       - name: install packages
         run: yarn install
-      
+
       - name: Run test suite
-        run: echo yarn test!  
-    
+        run: echo yarn test!
+
       - name: Check changes
-        run: echo Checking the changes made!  
-      
+        run: echo Checking the changes made!
+
       - name: Depoly to Netlify
         run: echo Deploying to Netlify
-    
+
       - name: Run a one-line script
         run: echo Done!
