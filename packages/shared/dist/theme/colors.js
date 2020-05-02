@@ -9,5 +9,6 @@ exports.colors = {
     blue: "#0000ff",
     primary: "#1133aa",
     secondary: "#9873dd",
+    silver: "c0c0c0",
 };
 //# sourceMappingURL=colors.js.map

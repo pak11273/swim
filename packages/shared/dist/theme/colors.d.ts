@@ -6,4 +6,5 @@ export declare const colors: {
     blue: string;
     primary: string;
     secondary: string;
+    silver: string;
 };

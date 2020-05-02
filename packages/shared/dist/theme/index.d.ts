@@ -8,6 +8,7 @@ export declare const theme: {
         blue: string;
         primary: string;
         secondary: string;
+        silver: string;
     };
     background: {
         white: string;
@@ -17,6 +18,7 @@ export declare const theme: {
         blue: string;
         primary: string;
         secondary: string;
+        silver: string;
     };
     mq: {
         xs: string;
