@@ -7,7 +7,7 @@ name: Web Deployment
 on:
   push:
     paths:
-      - "web/**"    
+      - "packages/web/**"    
 jobs:
   build:
     name: Deploy website
