@@ -8,39 +8,31 @@ on:
   push:
     paths: 
       - 'packages/web/*'    
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    
-  # name of job
-  name: Deploy website
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+jobs:
+  build: 
+    name: Deploy website
+    runs-on: ubuntu-latest
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2 
+      - uses: actions/checkout@v2
+      - name: Install yarn
+        run: |
+          curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+          echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+          sudo apt-get update
+          sudo apt-get install yarn
     
-    - name: Install yarn
-      run: |
-        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-        echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-        sudo apt-get update
-        sudo apt-get install yarn
-    
-    - name: install packages
-      run: yarn install
+      - name: install packages
+        run: yarn install
       
-    - name: Run test suite
-      run: echo yarn test!  
+      - name: Run test suite
+        run: echo yarn test!  
     
-    - name: Check changes
-      run: echo Checking the changes made!  
+      - name: Check changes
+        run: echo Checking the changes made!  
       
-    - name: Depoly to Netlify
-      run: echo Deploying to Netlify
+      - name: Depoly to Netlify
+        run: echo Deploying to Netlify
     
-    - name: Run a one-line script
-      run: echo Done!
+      - name: Run a one-line script
+        run: echo Done!
