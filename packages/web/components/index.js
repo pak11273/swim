@@ -1,5 +1,6 @@
 export * from "./Box"
 export * from "./NavBar"
+export * from "./Field"
 export * from "./Flex"
 export * from "./Grid"
 export * from "./GridArea"

@@ -1,11 +1,12 @@
-import React from 'react'
-import Link from 'next/link'
-import { withApollo } from '../apollo/client'
-import gql from 'graphql-tag'
-import { useMutation, useApolloClient } from '@apollo/react-hooks'
-import Field from '../components/field'
-import { getErrorMessage } from '../lib/form'
-import { useRouter } from 'next/router'
+import { useApolloClient, useMutation } from "@apollo/react-hooks"
+
+import { Field } from "components"
+import Link from "next/link"
+import React from "react"
+import { getErrorMessage } from "../lib/form"
+import gql from "graphql-tag"
+import { useRouter } from "next/router"
+import { withApollo } from "../apollo/client"
 
 const SignInMutation = gql`
   mutation SignInMutation($email: String!, $password: String!) {
@@ -39,7 +40,7 @@ function SignIn() {
         },
       })
       if (data.signIn.user) {
-        await router.push('/')
+        await router.push("/")
       }
     } catch (error) {
       setErrorMsg(getErrorMessage(error))
@@ -65,7 +66,7 @@ function SignIn() {
           required
           label="Password"
         />
-        <button type="submit">Sign in</button> or{' '}
+        <button type="submit">Sign in</button> or{" "}
         <Link href="signup">
           <a>Sign up</a>
         </Link>
