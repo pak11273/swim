@@ -2,6 +2,7 @@ export declare const theme: {
     breakpoints: string[];
     colors: {
         white: string;
+        gray: string;
         red: string;
         green: string;
         blue: string;
@@ -10,6 +11,7 @@ export declare const theme: {
     };
     background: {
         white: string;
+        gray: string;
         red: string;
         green: string;
         blue: string;
