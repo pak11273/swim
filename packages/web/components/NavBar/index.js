@@ -25,7 +25,7 @@ const StyledGridArea = styled((props) => <GridArea {...props} />)`
 `
 const links = [
   { label: "Phone", href: "/" },
-  { label: "About", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/" },
 ]
 
