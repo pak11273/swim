@@ -71,7 +71,7 @@ const Index = (props) => {
   }
 
   return (
-    <Layout title="DP Pools">
+    <Layout title="DP Pools" {...props}>
       <div id="container">
         <Grid areas={["masthead", "navbar", "main", "footer"]}>
           <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
@@ -94,6 +94,7 @@ const Index = (props) => {
             footer
           </div>
           <div
+            id="main"
             style={{
               background: "red",
               gridArea: "main",
@@ -103,7 +104,6 @@ const Index = (props) => {
           >
             main
           </div>
-          {/* <NavBar id="navbar" gridArea="navbar" /> */}
         </Grid>
       </div>
     </Layout>

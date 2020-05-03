@@ -4,6 +4,7 @@ const animate = "all 0.2s ease-in-out"
 export const NavBtn = styled.button`
   cursor: pointer;
   color: ${(props) => props.theme.colors.primary};
+  height: ${(props) => props.height};
   text-transform: uppercase;
 
   text-align: center;

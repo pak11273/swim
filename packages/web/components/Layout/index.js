@@ -1,14 +1,15 @@
 import { NavBar } from "components"
 
-export const Layout = ({ children, title = "This is the default title" }) => (
+export const Layout = (props) => (
   <div>
     <header>
+      {console.log("props nabar: ", props)}
       <nav>
-        <NavBar id="navbar" gridArea="navbar" />
+        <NavBar id="navbar" gridArea="navbar" {...props} />
       </nav>
     </header>
 
-    {children}
+    {props.children}
 
     <footer>{"I`m here to stay"}</footer>
   </div>
