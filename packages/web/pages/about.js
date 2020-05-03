@@ -1,11 +1,12 @@
-import Link from 'next/link'
+import { Layout } from "componentsj"
+import Link from "next/link"
 
 export default () => (
-  <div>
-    This is a static page goto{' '}
+  <Layout>
+    This is a static page goto{" "}
     <Link href="/">
       <a>dynamic</a>
-    </Link>{' '}
+    </Link>{" "}
     page.
-  </div>
+  </Layout>
 )
