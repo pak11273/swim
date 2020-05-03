@@ -1,4 +1,4 @@
-import { Layout } from "componentsj"
+import { Layout } from "components"
 import Link from "next/link"
 
 export default () => (

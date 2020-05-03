@@ -1,11 +1,12 @@
+import { Layout } from "components"
 import Link from "next/link"
 
 export default () => (
-  <div>
+  <Layout>
     Contact Page
     <Link href="/">
       <a>dynamic</a>
     </Link>{" "}
     page.
-  </div>
+  </Layout>
 )
