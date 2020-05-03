@@ -1,11 +1,13 @@
+import Link from "next/link"
 import styled from "styled-components"
 
 const animate = "all 0.2s ease-in-out"
-export const NavBtn = styled.button`
+
+const StyledBtn = styled.button`
   cursor: pointer;
-  color: ${(props) => props.theme.colors.primary};
-  height: ${(props) => props.height};
-  text-transform: uppercase;
+  color: ${(props) =>
+    props.active ? props.theme.colors.secondary : props.theme.colors.primary};
+  height: ${(props) => props.height || "16px"};
 
   text-align: center;
   margin: 0 auto;
@@ -16,12 +18,12 @@ export const NavBtn = styled.button`
     content: "";
     position: absolute;
     bottom: -10px;
-    width: 0px;
+    width: ${(props) => (props.active ? "100%" : "0px")};
+    opacity: ${(props) => (props.active ? "1" : "0")};
     height: 5px;
     margin: 5px 0 0;
     transition: ${animate};
     transition-duration: 0.75s;
-    opacity: 0;
   }
 
   &:hover {
@@ -33,3 +35,26 @@ export const NavBtn = styled.button`
     }
   }
 `
+
+const StyledA = styled.a`
+  text-transform: uppercase;
+  color: ${(props) =>
+    props.active ? props.theme.colors.secondary : props.theme.colors.primary};
+  text-decoration: none;
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.secondary};
+  }
+`
+
+export const NavBtn = (props) => {
+  console.log("props: ", props)
+  return (
+    <StyledBtn {...props}>
+      <StyledA {...props} active={props.active}>
+        {props.children}
+      </StyledA>
+    </StyledBtn>
+  )
+}

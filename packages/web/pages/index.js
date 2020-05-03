@@ -7,7 +7,6 @@ const StyledMasthead = styled(Section)`
   align-items: center;
   justify-content: center;
 `
-
 const Index = (props) => {
   useEffect(() => {
     var top = document.getElementById("scrollTop")
@@ -103,6 +102,9 @@ const Index = (props) => {
             }}
           >
             main
+          </div>
+          <div style={{ gridArea: "services" }} id="services">
+            services
           </div>
         </Grid>
       </div>

@@ -1,6 +1,12 @@
+import Link from "next/link"
 import styled from "styled-components"
 
-export const NavMenu = styled.nav`
+const links = [
+  { label: "Services", href: "#About" },
+  { label: "Contact", href: "/contact" },
+]
+
+const StyledMenu = styled.div`
   align-items: center;
   background: white;
   display: flex;
@@ -16,21 +22,31 @@ export const NavMenu = styled.nav`
   width: 100%;
   z-index: -1;
 
-  a {
-    text-transform: uppercase;
-    padding: 1rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: ${(props) => props.theme.colors.primary};
-    text-decoration: none;
-    transition: color 0.3s linear;
-
-    &:hover {
-      color: ${(props) => props.theme.colors.secondary};
-    }
-  }
-
   @media (min-width: 640px) {
     display: none;
   }
 `
+
+const StyledA = styled.a`
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  color: ${(props) => props.theme.colors.primary};
+  text-decoration: none;
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.secondary};
+  }
+`
+
+export const NavMenu = (props) => (
+  <StyledMenu open={props.open}>
+    {links.map((link, i) => (
+      <Link key={i} href="/contact" passHref>
+        <StyledA>{link.label}</StyledA>
+      </Link>
+    ))}
+  </StyledMenu>
+)

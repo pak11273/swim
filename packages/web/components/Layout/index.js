@@ -1,15 +1,15 @@
+import Head from "next/head"
 import { NavBar } from "components"
 
 export const Layout = (props) => (
   <div>
-    <header>
-      <nav>
-        <NavBar id="navbar" gridArea="navbar" {...props} />
-      </nav>
-    </header>
+    <Head>
+      <title>{props.title || ""}</title>
+    </Head>
+    <NavBar id="navbar" gridArea="navbar" {...props} />
 
     {props.children}
 
-    <footer>{"I`m here to stay"}</footer>
+    <footer>"Footer"</footer>
   </div>
 )

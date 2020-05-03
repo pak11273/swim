@@ -10,14 +10,17 @@ import {
   XBurger,
 } from "components"
 
-import Link from "next/link"
 import { Phone } from "@styled-icons/entypo/Phone"
 import styled from "styled-components"
+import { useRouter } from "next/router"
 import { useState } from "react"
 
 const StyledPhone = styled(Phone)`
   padding-right: 4px;
   color: ${(props) => props.theme.colors.primary};
+  ${(props) => props.theme.mq.sm`
+   display: none;
+ `}
 `
 
 const StyledGridArea = styled((props) => <GridArea {...props} />)`
@@ -25,14 +28,13 @@ const StyledGridArea = styled((props) => <GridArea {...props} />)`
   background: ${(props) => props.background || "white"};
   justify-content: center;
   margin: 0 auto;
-  padding: 1.2rem;
   position: fixed;
   width: 100%;
   box-shadow: ${(props) =>
     props.shadow === "true" ? "0 4px 8px black" : "none"};
 `
 const links = [
-  { label: "Services", href: "#About" },
+  { label: "Services", href: "/#services" },
   { label: "Contact", href: "/contact" },
 ]
 
@@ -45,6 +47,15 @@ const StyledFlex = styled.div`
     max-width: 380px;
   }
 `
+
+export const StyledText = styled.p`
+  color: ${(props) => props.color};
+  font-size: ${(props) => props.fontSize};
+  ${(props) => props.theme.mq.sm`
+   display: none;
+ `}
+`
+
 const StyledBox = styled(Box)`
   align-items: center;
   display: none;
@@ -74,42 +85,40 @@ const useOnClickOutside = (ref, handler) => {
 export const NavBar = (props) => {
   const [open, setOpen] = useState(false)
   const node = React.useRef()
+  const router = useRouter()
   useOnClickOutside(node, () => setOpen(false))
 
   return (
     <StyledGridArea gridArea="navbar" id={props.id}>
-      <Wrapper maxWidth="1024px">
+      <Wrapper padding="1.2rem" maxWidth="1024px">
         <Logo href="/" />
         <StyledFlex ref={node}>
           <Flex>
-            <StyledPhone size={18} />
-            <Text
-              style={{
-                fontSize: "1.3rem",
-                color: `${props.colors.primary}`,
-              }}
-              xs={{ display: "none" }}
-            >
+            <StyledPhone size={18} md-display="none" />
+            <StyledText fontSize="1.3rem" color={`${props.colors.primary}`}>
               903.867.5309
-            </Text>
+            </StyledText>
           </Flex>
           <StyledBox padding="0 1rem 0 0">
-            {links.map((link, i) => (
-              <NavBtn key={i} height="16px">
-                {link.label}
-              </NavBtn>
-            ))}
+            {links.map((link, i) => {
+              let active = router.pathname === link.href
+              return (
+                <NavBtn
+                  key={i}
+                  href={link.href}
+                  {...router}
+                  passHref
+                  active={active}
+                >
+                  {link.label}
+                </NavBtn>
+              )
+            })}
           </StyledBox>
           <XBurger open={open} setOpen={setOpen} />
         </StyledFlex>
       </Wrapper>
-      <NavMenu open={open}>
-        {links.map((link, i) => (
-          <Link key={i} href={link.href}>
-            <a>{link.label}</a>
-          </Link>
-        ))}
-      </NavMenu>
+      <NavMenu open={open} passHref {...props} />
     </StyledGridArea>
   )
 }

@@ -7,6 +7,7 @@ export const Grid = styled.section`
     "navbar"
     "masthead"
     "main"
+    "services"
     "footer";
   grid-template-columns: "auto";
   grid-template-rows: "auto";
