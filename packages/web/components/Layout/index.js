@@ -3,7 +3,6 @@ import { NavBar } from "components"
 export const Layout = (props) => (
   <div>
     <header>
-      {("props nabar: ", props)}
       <nav>
         <NavBar id="navbar" gridArea="navbar" {...props} />
       </nav>
