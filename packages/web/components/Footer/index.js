@@ -1,8 +1,12 @@
+import { Text, Wrapper } from "components"
+
+import { Address } from "@styled-icons/entypo/Address"
 import { FacebookCircle } from "@styled-icons/boxicons-logos/FacebookCircle"
 import { GooglePlusCircle } from "@styled-icons/boxicons-logos/GooglePlusCircle"
 import { LinkedinSquare } from "@styled-icons/boxicons-logos/LinkedinSquare"
+import { Mail } from "@styled-icons/entypo/Mail"
+import { OldPhone } from "@styled-icons/entypo/OldPhone"
 import { Twitter } from "@styled-icons/boxicons-logos/Twitter"
-import { Wrapper } from "components"
 import styled from "styled-components"
 
 export const StyledFooter = styled.section`
@@ -18,10 +22,10 @@ export const StyledFooter = styled.section`
 const MainFooter = styled.section`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  padding: 3rem;
+  justify-content: flex-start;
+  padding: 6rem 0 0 0;
   width: 100%;
-  ${({ mq }) => mq.md`
+  ${({ mq }) => mq.sm`
      justify-content: space-evenly;
   `}
 `
@@ -29,6 +33,7 @@ const SocialFooter = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 3rem;
   ul {
     text-align: center;
     li {
@@ -36,7 +41,6 @@ const SocialFooter = styled.section`
       display: inline-block;
     }
   }
-  padding: 3rem;
   width: 100%;
 `
 const LegalFooter = styled.section`
@@ -65,11 +69,31 @@ const Column = styled.div`
   li {
     list-style: none;
   }
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   padding: 1rem;
 `
-const titles = ["Address", "Phone", "Mail"]
+
+const StyledAddress = styled(Address)`
+  color: ${(props) => props.colors.primary};
+  padding: 12px 8px 0 0;
+`
+
+const StyledOldPhone = styled(OldPhone)`
+  color: ${(props) => props.colors.primary};
+  padding: 12px 8px 0 0;
+`
+const StyledMail = styled(Mail)`
+  color: ${(props) => props.colors.primary};
+  padding: 12px 8px 0 0;
+`
+
+// const StyledText = styled(Text)`
+const StyledText = styled((props) => <Text {...props} />)`
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: ${(props) => props.theme.colors.primary};
+`
 
 export const Footer = (props) => {
   return (
@@ -77,30 +101,47 @@ export const Footer = (props) => {
       <Wrapper maxWidth="960px" flexDirection="column" {...props}>
         <MainFooter {...props}>
           <Column>
+            <StyledAddress size={32} {...props} />
             <div>
               <Title>Address</Title>
               <ul>
-                <li>123 Swimming pool lane</li>
-                <li>Fort Worth, TX 777777</li>
+                <li>
+                  <StyledText>123 Swimming pool lane</StyledText>
+                </li>
+                <li>
+                  <StyledText>Fort Worth, TX 777777</StyledText>
+                </li>
               </ul>
             </div>
           </Column>
           <Column>
+            <StyledOldPhone size={32} {...props} />
             <div>
               <Title>Phone</Title>
               <ul>
-                <li>0123 456 7890</li>
-                <li>Mon-Fri 8:00am -</li>
-                <li>8:00pm</li>
+                <li>
+                  <StyledText>0123 456 7890</StyledText>
+                </li>
+                <li>
+                  <StyledText>Mon-Fri 8:00am -</StyledText>
+                </li>
+                <li>
+                  <StyledText>8:00pm</StyledText>
+                </li>
               </ul>
             </div>
           </Column>
           <Column>
+            <StyledMail size={32} {...props} />
             <div>
               <Title>Mail</Title>
               <ul>
-                <li>support@dppools.com</li>
-                <li>24x7 online support</li>
+                <li>
+                  <StyledText>support@dppools.com</StyledText>
+                </li>
+                <li>
+                  <StyledText>24x7 online support</StyledText>
+                </li>
               </ul>
             </div>
           </Column>
