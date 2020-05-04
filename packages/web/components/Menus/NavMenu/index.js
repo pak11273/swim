@@ -1,16 +1,10 @@
 import Link from "next/link"
 import styled from "styled-components"
 
-const links = [
-  { label: "Services", href: "#About" },
-  { label: "Contact", href: "/contact" },
-]
-
 const StyledMenu = styled.div`
   align-items: center;
   background: white;
   display: flex;
-  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-200%)")};
   transition: transform 0.3s ease-in-out;
   flex-direction: column;
   height: 200px;
@@ -20,8 +14,8 @@ const StyledMenu = styled.div`
   right: 0;
   text-align: left;
   width: 100%;
+  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-200%)")};
   z-index: -1;
-
   @media (min-width: 640px) {
     display: none;
   }
@@ -40,13 +34,26 @@ const StyledA = styled.a`
     color: ${(props) => props.theme.colors.secondary};
   }
 `
-
-export const NavMenu = (props) => (
-  <StyledMenu open={props.open}>
-    {links.map((link, i) => (
-      <Link key={i} href="/contact" passHref>
-        <StyledA>{link.label}</StyledA>
-      </Link>
-    ))}
-  </StyledMenu>
-)
+export const NavMenu = (props) => {
+  //   const handleClick = (e, link) => {
+  //     e.preventDefault
+  //     console.log("link: ", link)
+  //   }
+  return (
+    <StyledMenu open={props.open}>
+      {props.links.map((link, i) => (
+        <button
+          key={i}
+          href={link.href}
+          onClick={() => {
+            handleClick(link.href)
+          }}
+        >
+          <StyledA href="/contact" {...props}>
+            {link.label}
+          </StyledA>
+        </button>
+      ))}
+    </StyledMenu>
+  )
+}

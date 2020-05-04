@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { useEffect } from "react"
 
 const StyledMasthead = styled(Section)`
+  grid-area: ${(props) => props.area};
   align-items: center;
   justify-content: center;
 `
@@ -72,9 +73,9 @@ const Index = (props) => {
   return (
     <Layout title="DP Pools" {...props}>
       <div id="container">
-        <Grid areas={["masthead", "navbar", "main", "footer"]}>
+        <Grid areas={["masthead", "main", "footer", "services"]}>
           <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
-          <StyledMasthead>
+          <StyledMasthead gridArea="masthead">
             <Box>
               <h3>FREE ESTIMATES</h3>
               <h2>DP Pools</h2>
@@ -82,16 +83,6 @@ const Index = (props) => {
               <h6>Dallas/FtWorth</h6>
             </Box>
           </StyledMasthead>
-          <div
-            style={{
-              background: "blue",
-              gridArea: "footer",
-              width: "100vw",
-              height: "300px",
-            }}
-          >
-            footer
-          </div>
           <div
             id="main"
             style={{

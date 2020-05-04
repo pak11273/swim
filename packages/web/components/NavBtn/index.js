@@ -49,7 +49,6 @@ const StyledA = styled.a`
 `
 
 export const NavBtn = (props) => {
-  console.log("props: ", props)
   return (
     <StyledBtn {...props}>
       <StyledA {...props} active={props.active}>

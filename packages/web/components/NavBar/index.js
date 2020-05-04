@@ -34,7 +34,7 @@ const StyledGridArea = styled((props) => <GridArea {...props} />)`
     props.shadow === "true" ? "0 4px 8px black" : "none"};
 `
 const links = [
-  { label: "Services", href: "/#services" },
+  // { label: "Services", href: "/#services" },
   { label: "Contact", href: "/contact" },
 ]
 
@@ -86,7 +86,7 @@ export const NavBar = (props) => {
   const [open, setOpen] = useState(false)
   const node = React.useRef()
   const router = useRouter()
-  useOnClickOutside(node, () => setOpen(false))
+  // useOnClickOutside(node, () => setOpen(false))
 
   return (
     <StyledGridArea gridArea="navbar" id={props.id}>
@@ -118,7 +118,7 @@ export const NavBar = (props) => {
           <XBurger open={open} setOpen={setOpen} />
         </StyledFlex>
       </Wrapper>
-      <NavMenu open={open} passHref {...props} />
+      <NavMenu open={open} passHref {...props} links={links} />
     </StyledGridArea>
   )
 }
