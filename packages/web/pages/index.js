@@ -1,9 +1,23 @@
-import { Box, Grid, Layout, ScrollTop, Section } from "components"
+import {
+  Box,
+  Flex,
+  Grid,
+  Layout,
+  Line,
+  ScrollTop,
+  Section,
+  Text,
+} from "components"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
 
+import { PeopleOutline } from "@styled-icons/material-outlined/PeopleOutline"
+import { Spa } from "@styled-icons/boxicons-regular/Spa"
+import { SwimmingPool } from "@styled-icons/fa-solid/SwimmingPool"
 import styled from "styled-components"
 
 const StyledMasthead = styled(Section)`
+  background: white url("assets/images/patric-wong-iIn9RMIlay8-unsplash.jpg")
+    center/cover;
   grid-area: ${(props) => props.area};
   align-items: center;
   justify-content: center;
@@ -18,6 +32,49 @@ const Div = styled.div`
 /* i'm using destructuring on the prop above */
 /* adding a conventional CSS class could look something like this:
 <div ref={ourRef} className={`defaultClass${show.itemOne ? " addedClass" : ""}`} /> */
+
+const StyledMaintenance = styled(Section)`
+  background: ${(props) => props.background || "transparent"};
+  > div {
+    > h5 {
+      font-size: 2.2rem;
+      color: ${(props) => props.theme.colors.primary || "black"};
+    }
+    > h6 {
+      color: ${(props) => props.theme.colors.primary || "black"};
+      font-size: 1.2rem;
+    }
+    width: 100%;
+    max-width: 1240px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    div {
+      margin: 25px;
+      > h6 {
+        color: ${(props) => props.theme.colors.primary || "black"};
+        font-size: 1.4rem;
+      }
+      width: 200px;
+      p {
+        line-height: 1.5rem;
+      }
+    }
+  }
+`
+
+const StyledSpa = styled(Spa)`
+  background: transparent;
+  color: ${(props) => props.theme.colors.primary || "black"};
+`
+const StyledSwimmingPool = styled(SwimmingPool)`
+  background: transparent;
+  color: ${(props) => props.theme.colors.primary || "black"};
+`
+const StyledPeopleOutline = styled(PeopleOutline)`
+  background: transparent;
+  color: ${(props) => props.theme.colors.primary || "black"};
+`
 
 const Index = (props) => {
   const [show, doShow] = useState({
@@ -128,6 +185,7 @@ const Index = (props) => {
         <Grid
           areas={[
             "masthead",
+            "filler",
             "maintenance",
             "services",
             "div2",
@@ -144,13 +202,59 @@ const Index = (props) => {
               <h6>Dallas/FtWorth</h6>
             </Box>
           </StyledMasthead>
-          <Div
-            style={{ gridArea: "maintenance" }}
+          <div
+            style={{
+              gridArea: "filler",
+              background: "green",
+              height: "1168px",
+            }}
+          >
+            FILLER
+          </div>
+          <StyledMaintenance
+            gridArea="maintenance"
             // animate={show.itemThree}
             ref={refThree}
+            {...props}
           >
-            div1
-          </Div>
+            <Flex>
+              <h5>Maintenance and More</h5>
+            </Flex>
+            <Line />
+            <Flex>
+              <h6>You can trust us for all your repairs and maintenance</h6>
+            </Flex>
+            <Flex>
+              <Box>
+                <StyledSwimmingPool size={48} />
+                <h6>Pool</h6>
+                <p>
+                  We offer a pool service, including an array of tasks, such as
+                  scheduled pool cleaning, pool vacuuming, pool plastering,pool
+                  caulking, and much more.{" "}
+                </p>
+              </Box>
+              <Box>
+                <StyledPeopleOutline size={48} />
+                <h6>Jacuzzi</h6>
+                <p>
+                  To maintain your domestic hot tub or commercial jacuzzi in
+                  outstanding condition, we provide hot tub repair alongwith
+                  various maintenance work, including caulking, water
+                  maintenance, heater repairs, and more.
+                </p>
+              </Box>
+              <Box>
+                <StyledSpa size={48} />
+                <h6>Spa</h6>
+                <p>
+                  We serve our business clients with scheduled spa repair and
+                  maintenance services, comprising a thorough spa cleaning
+                  service with spa heating repair tasks, and much more.
+                </p>
+              </Box>
+            </Flex>
+          </StyledMaintenance>
           <Div
             style={{ gridArea: "div2" }}
             // animate={show.itemTwo}

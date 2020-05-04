@@ -45,7 +45,7 @@ const StyledFlex = styled.div`
   max-width: 80px;
   width: 100%;
   @media (min-width: 640px) {
-    max-width: 380px;
+    max-width: 300px;
   }
 `
 
@@ -95,7 +95,7 @@ export const NavBar = (props) => {
       <Wrapper padding="1.2rem" maxWidth="1024px">
         <Logo href="/" />
         <StyledFlex ref={node}>
-          <Flex>
+          <Flex width="334px">
             <StyledPhone size={18} md-display="none" />
             <StyledText fontSize="1.3rem" color={`${props.colors.primary}`}>
               903.867.5309
