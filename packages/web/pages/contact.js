@@ -1,9 +1,10 @@
-import { Box, Grid, Layout, Section } from "components"
+import { Box, Grid, Layout, Section, Wrapper } from "components"
 
 import styled from "styled-components"
 
 const StyledMasthead = styled(Section)`
-  background: blue;
+  background: blue url("assets/images/darren-miller-F0MmnUS2fwc-unsplash.jpg")
+    center/cover;
   grid-area: ${(props) => props.gridArea};
   align-items: center;
   justify-content: center;
@@ -17,12 +18,11 @@ const Contact = (props) => (
   <Layout title="DP Pools | Contact" {...props}>
     <Grid areas={["masthead", "form", "map", "footer"]}>
       <StyledMasthead gridArea="masthead">
-        <Box>
+        <Wrapper maxWidth="1240px" flexDirection="column">
           <h3>Contact Us</h3>
-          <h2>For more information please send us an email or text</h2>
           <h4>Need more details?</h4>
-          <h6>Dallas/FtWorth</h6>
-        </Box>
+          <h6>Send a text or email</h6>
+        </Wrapper>
       </StyledMasthead>
       <StyledMap gridArea="map"></StyledMap>
     </Grid>

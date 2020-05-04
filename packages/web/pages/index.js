@@ -6,10 +6,11 @@ import {
   Line,
   ScrollTop,
   Section,
-  Text,
+  Wrapper,
 } from "components"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
 
+import { MeetingRoom } from "@styled-icons/material-outlined/MeetingRoom"
 import { PeopleOutline } from "@styled-icons/material-outlined/PeopleOutline"
 import { Spa } from "@styled-icons/boxicons-regular/Spa"
 import { SwimmingPool } from "@styled-icons/fa-solid/SwimmingPool"
@@ -33,7 +34,100 @@ const Div = styled.div`
 /* adding a conventional CSS class could look something like this:
 <div ref={ourRef} className={`defaultClass${show.itemOne ? " addedClass" : ""}`} /> */
 
-const StyledMaintenance = styled(Section)`
+const StyledCleaning = styled(Section)`
+  background: url("assets/images/blue-wave-2.png") center/cover;
+  width: 100%;
+  justify-content: center;
+  color: black;
+  > div {
+    color: black;
+    max-width: 1240px;
+    flex-direction: column-reverse;
+    ${({ theme }) => theme.mq.md`
+      flex-direction: row;
+    `}
+  }
+  > div:first-child {
+    > div {
+      max-width: 510px;
+      justify-content: flex-start;
+      hr {
+        text-align: left;
+        margin: 1rem 0;
+      }
+      > div:first-child {
+        padding: 0;
+      }
+      > div:nth-child(3) {
+        padding: 0;
+      }
+      h5 {
+        font-size: 2.2rem;
+        color: ${(props) => props.theme.colors.primary || "black"};
+      }
+      h6 {
+        color: ${(props) => props.theme.colors.primary || "black"};
+        font-size: 1.2rem;
+      }
+      > div:nth-child(1) {
+      }
+    }
+  }
+  > div:nth-child(1) {
+    img {
+      width: 100%;
+      max-width: 480px;
+    }
+  }
+`
+const StyledRepair = styled(Section)`
+  background: url("assets/images/blue-wave-1.png") center/cover;
+  width: 100%;
+  justify-content: center;
+  color: black;
+  > div {
+    color: black;
+    max-width: 1240px;
+    flex-direction: column;
+    ${({ theme }) => theme.mq.md`
+      flex-direction: row;
+    `}
+  }
+  > div:first-child {
+    > div {
+      max-width: 510px;
+      justify-content: flex-start;
+      hr {
+        text-align: left;
+        margin: 1rem 0;
+      }
+      > div:first-child {
+        padding: 0;
+      }
+      > div:nth-child(3) {
+        padding: 0;
+      }
+      h5 {
+        font-size: 2.2rem;
+        color: ${(props) => props.theme.colors.primary || "black"};
+      }
+      h6 {
+        color: ${(props) => props.theme.colors.primary || "black"};
+        font-size: 1.2rem;
+      }
+      > div:nth-child(1) {
+      }
+    }
+  }
+  > div:nth-child(1) {
+    img {
+      width: 100%;
+      max-width: 480px;
+    }
+  }
+`
+
+const StyledOther = styled(Section)`
   background: ${(props) => props.background || "transparent"};
   > div {
     > h5 {
@@ -63,11 +157,41 @@ const StyledMaintenance = styled(Section)`
   }
 `
 
+const StyledAccolades = styled(Section)`
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 300px;
+  background: lightgray;
+  img {
+    background: transparent;
+    height: 20px;
+  }
+  ${({ theme }) => theme.mq.sm`
+      img {
+        height: 80px;
+      }
+      > div {
+        max-width: 640px;
+      }
+    `}
+  ${({ theme }) => theme.mq.md`
+      img {
+        height: 80px;
+      }
+      > div {
+        max-width: 1240px;
+      }
+    `}
+`
+const AccoladesWrapper = styled(Wrapper)`
+  max-width: 200px;
+`
+
 const StyledSpa = styled(Spa)`
   background: transparent;
   color: ${(props) => props.theme.colors.primary || "black"};
 `
-const StyledSwimmingPool = styled(SwimmingPool)`
+const StyledMeetingRoom = styled(MeetingRoom)`
   background: transparent;
   color: ${(props) => props.theme.colors.primary || "black"};
 `
@@ -185,11 +309,11 @@ const Index = (props) => {
         <Grid
           areas={[
             "masthead",
-            "filler",
-            "maintenance",
-            "services",
-            "div2",
+            "cleaning",
+            "repair",
+            "other",
             "div3",
+            "accolades",
             "footer",
           ]}
         >
@@ -202,73 +326,119 @@ const Index = (props) => {
               <h6>Dallas/FtWorth</h6>
             </Box>
           </StyledMasthead>
-          <div
-            style={{
-              gridArea: "filler",
-              background: "green",
-              height: "1168px",
-            }}
+          <StyledCleaning
+            gridArea="cleaning"
+            // animate={show.itemOne}
+            ref={ourRef}
           >
-            FILLER
-          </div>
-          <StyledMaintenance
-            gridArea="maintenance"
+            <Wrapper>
+              <Flex>
+                <Flex>
+                  <h5>Our Cleaning Routine</h5>
+                </Flex>
+                <Line />
+                <Flex>
+                  <h6>We keep our pools pristine and healthy</h6>
+                </Flex>
+                <Box>
+                  <p>
+                    We offer a pool service, including an array of tasks, such
+                    as scheduled pool cleaning, pool vacuuming, pool
+                    plastering,pool caulking, and much more.{" "}
+                  </p>
+                </Box>
+              </Flex>
+              <Flex>
+                <Box>
+                  <img src="assets/images/286975408.jpg" />
+                </Box>
+              </Flex>
+            </Wrapper>
+          </StyledCleaning>
+          <StyledRepair gridArea="repair">
+            <Wrapper>
+              <Flex>
+                <Box>
+                  <img src="assets/images/337387834.jpg" />
+                </Box>
+              </Flex>
+              <Flex>
+                <Flex>
+                  <h5>Our Repair Routine</h5>
+                </Flex>
+                <Line />
+                <Flex>
+                  <h6>
+                    We maintain the highest standards when it comes to pool
+                    repair
+                  </h6>
+                </Flex>
+                <Box>
+                  <p>
+                    We strive to make your pool a safe place. Our number one
+                    priority is to make your pool a safe zone for all visitors.
+                    We will repair and/or replace any damaged areas or parts.
+                  </p>
+                </Box>
+              </Flex>
+            </Wrapper>
+          </StyledRepair>
+          <StyledOther
+            gridArea="other"
             // animate={show.itemThree}
             ref={refThree}
             {...props}
           >
             <Flex>
-              <h5>Maintenance and More</h5>
+              <h5>Additional Services</h5>
             </Flex>
             <Line />
             <Flex>
-              <h6>You can trust us for all your repairs and maintenance</h6>
+              <h6>We take care of all your aqua-leisure products</h6>
             </Flex>
             <Flex>
               <Box>
-                <StyledSwimmingPool size={48} />
-                <h6>Pool</h6>
+                <StyledMeetingRoom size={48} />
+                <h6>Sauna</h6>
                 <p>
-                  We offer a pool service, including an array of tasks, such as
-                  scheduled pool cleaning, pool vacuuming, pool plastering,pool
-                  caulking, and much more.{" "}
+                  Low-pressure wash the exterior. Vacuum and sweep out your
+                  sauna and remove loose dirt. We also sanitize your spa so
+                  surface viruses (ie. Covid-19) are completely removed.
                 </p>
               </Box>
               <Box>
                 <StyledPeopleOutline size={48} />
                 <h6>Jacuzzi</h6>
                 <p>
-                  To maintain your domestic hot tub or commercial jacuzzi in
-                  outstanding condition, we provide hot tub repair alongwith
-                  various maintenance work, including caulking, water
-                  maintenance, heater repairs, and more.
+                  We use chlorine/bromine to sanitize jacuzzi but also use
+                  allergy free cleaners if necessary. We will rinse your filters
+                  and check if they need replacing with every visit.
                 </p>
               </Box>
               <Box>
                 <StyledSpa size={48} />
                 <h6>Spa</h6>
                 <p>
-                  We serve our business clients with scheduled spa repair and
-                  maintenance services, comprising a thorough spa cleaning
-                  service with spa heating repair tasks, and much more.
+                  We provide a deep cleansing of your spa and refill your
+                  sanitizers. We check and replace unusable filters with every
+                  visit.
                 </p>
               </Box>
             </Flex>
-          </StyledMaintenance>
-          <Div
-            style={{ gridArea: "div2" }}
+          </StyledOther>
+          <StyledAccolades
+            gridArea="accolades"
             // animate={show.itemTwo}
             ref={anotherRef}
           >
-            div2
-          </Div>
-          <Div
-            style={{ gridArea: "div3", height: "9704px" }}
-            // animate={show.itemOne}
-            ref={ourRef}
-          >
-            div3
-          </Div>
+            <AccoladesWrapper>
+              <img src="assets/images/accolades/angielist.png" />
+              <img src="assets/images/accolades/nspf.png" />
+              <img src="assets/images/accolades/super.png" />
+              <img src="assets/images/accolades/ipssa.png" />
+              <img src="assets/images/accolades/contractor.png" />
+            </AccoladesWrapper>
+          </StyledAccolades>
         </Grid>
       </div>
     </Layout>
