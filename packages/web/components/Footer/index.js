@@ -134,8 +134,12 @@ export const Footer = (props) => {
         <LegalFooter>
           <Column>
             <ul>
-              <li>Terms & Conditions</li>
-              <li>Privacy Policy</li>
+              <li>
+                <a>Terms & Conditions</a>
+              </li>
+              <li>
+                <a>Privacy Policy</a>
+              </li>
               <li>&copy; 2020 Copyright DP Pools</li>
             </ul>
           </Column>
