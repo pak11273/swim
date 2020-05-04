@@ -1,3 +1,7 @@
+import { FacebookCircle } from "@styled-icons/boxicons-logos/FacebookCircle"
+import { GooglePlusCircle } from "@styled-icons/boxicons-logos/GooglePlusCircle"
+import { LinkedinSquare } from "@styled-icons/boxicons-logos/LinkedinSquare"
+import { Twitter } from "@styled-icons/boxicons-logos/Twitter"
 import { Wrapper } from "components"
 import styled from "styled-components"
 
@@ -5,23 +9,47 @@ export const StyledFooter = styled.section`
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   height: 100%;
   grid-area: ${(props) => props.gridArea || "footer"};
-  background: ${(props) => props.bg || props.background.primary};
   max-width: ${(props) => props.maxWidth || "none"};
   width: 100%;
-  ${({ mq }) => mq.sm`
-   display: none;
- `}
 `
 
 const MainFooter = styled.section`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem;
+  width: 100%;
+  ${({ mq }) => mq.md`
+     justify-content: space-evenly;
+  `}
 `
-const SocialFooter = styled.section``
-const LegalFooter = styled.section``
+const SocialFooter = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  ul {
+    text-align: center;
+    li {
+      padding: 1rem;
+      display: inline-block;
+    }
+  }
+  padding: 3rem;
+  width: 100%;
+`
+const LegalFooter = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  li {
+    padding: 1rem;
+    display: inline-block;
+  }
+  padding: 3rem;
+  width: 100%;
+`
 
 const Title = styled.h1`
   color: ${(props) => props.theme.colors.primary || "black"};
@@ -39,15 +67,15 @@ const Column = styled.div`
   }
   flex-direction: column;
   justify-content: flex-start;
+  padding: 1rem;
 `
 const titles = ["Address", "Phone", "Mail"]
 
 export const Footer = (props) => {
-  console.log(props)
   return (
     <StyledFooter {...props}>
-      <Wrapper maxWidth="960px" flexDirection="column">
-        <MainFooter>
+      <Wrapper maxWidth="960px" flexDirection="column" {...props}>
+        <MainFooter {...props}>
           <Column>
             <div>
               <Title>Address</Title>
@@ -79,10 +107,39 @@ export const Footer = (props) => {
         </MainFooter>
         <SocialFooter>
           <Column>
-            <Title>Social</Title>
+            <ul>
+              <li>
+                <a>
+                  <FacebookCircle size={48} color={props.colors.primary} />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <Twitter size={48} color={props.colors.primary} />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <GooglePlusCircle size={48} color={props.colors.primary} />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <LinkedinSquare size={48} color={props.colors.primary} />
+                </a>
+              </li>
+            </ul>
           </Column>
         </SocialFooter>
-        <LegalFooter>Legal</LegalFooter>
+        <LegalFooter>
+          <Column>
+            <ul>
+              <li>Terms & Conditions</li>
+              <li>Privacy Policy</li>
+              <li>&copy; 2020 Copyright DP Pools</li>
+            </ul>
+          </Column>
+        </LegalFooter>
       </Wrapper>
     </StyledFooter>
   )
