@@ -16,10 +16,11 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 
 const StyledPhone = styled(Phone)`
+  display: none;
   padding-right: 4px;
   color: ${(props) => props.theme.colors.primary};
   ${(props) => props.theme.mq.sm`
-   display: none;
+   display: block;
  `}
 `
 
@@ -49,10 +50,11 @@ const StyledFlex = styled.div`
 `
 
 export const StyledText = styled.p`
+  display: none;
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize};
   ${(props) => props.theme.mq.sm`
-   display: none;
+   display: block;
  `}
 `
 

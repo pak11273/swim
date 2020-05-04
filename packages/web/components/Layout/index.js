@@ -1,5 +1,6 @@
+import { Footer, NavBar } from "components"
+
 import Head from "next/head"
-import { NavBar } from "components"
 
 export const Layout = (props) => (
   <div>
@@ -10,6 +11,6 @@ export const Layout = (props) => (
 
     {props.children}
 
-    <footer>"Footer"</footer>
+    <Footer {...props}>"Footer"</Footer>
   </div>
 )

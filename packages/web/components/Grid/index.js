@@ -8,7 +8,7 @@ export const Grid = styled.section`
       ? props.areas.reduce((acc, v) => (acc += `${"'" + v + "'" + "\n"}`), ``) +
         ";"
       : "none"};
-  grid-template-columns: "auto";
-  grid-template-rows: "auto";
-  max-width: ${(props) => props.maxWidth || "100%"};
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  max-width: ${(props) => props.maxWidth || "none"};
 `

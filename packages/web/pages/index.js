@@ -1,14 +1,66 @@
 import { Box, Grid, Layout, ScrollTop, Section } from "components"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
 
 import styled from "styled-components"
-import { useEffect } from "react"
 
 const StyledMasthead = styled(Section)`
   grid-area: ${(props) => props.area};
   align-items: center;
   justify-content: center;
 `
+// transform: translateX(${({ animate }) => (animate ? "0" : "-100vw")});
+const Div = styled.div`
+  transition: transform 1s;
+  height: 900px;
+  width: 300px;
+  background-color: red;
+`
+/* i'm using destructuring on the prop above */
+/* adding a conventional CSS class could look something like this:
+<div ref={ourRef} className={`defaultClass${show.itemOne ? " addedClass" : ""}`} /> */
+
 const Index = (props) => {
+  const [show, doShow] = useState({
+    itemOne: false,
+    itemTwo: false,
+    itemThree: false,
+  })
+
+  const ourRef = useRef(null),
+    anotherRef = useRef(null),
+    refThree = useRef(null)
+
+  useEffect(() => {
+    const topPos = (element) => element.getBoundingClientRect().top
+
+    // const element = document.getElementById("container")
+    // const bodyRect = document.body.getBoundingClientRect()
+    // const elemRect = element.getBoundingClientRect()
+    // const offset = elemRect.top - bodyRect.top
+
+    const div1Pos = topPos(ourRef.current),
+      div2Pos = topPos(anotherRef.current),
+      div3Pos = topPos(refThree.current)
+
+    const onScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight
+      if (div1Pos < scrollPos) {
+        doShow((state) => ({ ...state, itemOne: true }))
+      } else if (div2Pos < scrollPos) {
+        doShow((state) => ({ ...state, itemTwo: true }))
+      } else if (div3Pos < scrollPos) {
+        doShow((state) => ({ ...state, itemThree: true }))
+      }
+    }
+
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
+    /* 
+       remove the event listener in the cleanup function 
+       to prevent memory leaks
+    */
+  }, [])
+
   useEffect(() => {
     var top = document.getElementById("scrollTop")
     var isScrolling = false
@@ -73,7 +125,17 @@ const Index = (props) => {
   return (
     <Layout title="DP Pools" {...props}>
       <div id="container">
-        <Grid areas={["masthead", "main", "footer", "services"]}>
+        <Grid
+          areas={[
+            "masthead",
+            "main",
+            "services",
+            "div1",
+            "div2",
+            "div3",
+            "footer",
+          ]}
+        >
           <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
           <StyledMasthead gridArea="masthead">
             <Box>
@@ -97,6 +159,27 @@ const Index = (props) => {
           <div style={{ gridArea: "services" }} id="services">
             services
           </div>
+          <Div
+            style={{ gridArea: "div1" }}
+            // animate={show.itemThree}
+            ref={refThree}
+          >
+            div1
+          </Div>
+          <Div
+            style={{ gridArea: "div2" }}
+            // animate={show.itemTwo}
+            ref={anotherRef}
+          >
+            div2
+          </Div>
+          <Div
+            style={{ gridArea: "div3", height: "9704px" }}
+            // animate={show.itemOne}
+            ref={ourRef}
+          >
+            div3
+          </Div>
         </Grid>
       </div>
     </Layout>
