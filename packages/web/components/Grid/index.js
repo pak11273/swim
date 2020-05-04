@@ -10,5 +10,6 @@ export const Grid = styled.section`
       : "none"};
   grid-template-columns: auto;
   grid-template-rows: auto;
+  width: 100%;
   max-width: ${(props) => props.maxWidth || "none"};
 `

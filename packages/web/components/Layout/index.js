@@ -11,6 +11,6 @@ export const Layout = (props) => (
 
     {props.children}
 
-    <Footer {...props}>"Footer"</Footer>
+    <Footer {...props} />
   </div>
 )

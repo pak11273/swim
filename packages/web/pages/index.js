@@ -12,7 +12,7 @@ const StyledMasthead = styled(Section)`
 const Div = styled.div`
   transition: transform 1s;
   height: 900px;
-  width: 300px;
+  width: 100%;
   background-color: red;
 `
 /* i'm using destructuring on the prop above */
@@ -128,9 +128,8 @@ const Index = (props) => {
         <Grid
           areas={[
             "masthead",
-            "main",
+            "maintenance",
             "services",
-            "div1",
             "div2",
             "div3",
             "footer",
@@ -145,22 +144,8 @@ const Index = (props) => {
               <h6>Dallas/FtWorth</h6>
             </Box>
           </StyledMasthead>
-          <div
-            id="main"
-            style={{
-              background: "red",
-              gridArea: "main",
-              width: "100vw",
-              height: "900px",
-            }}
-          >
-            main
-          </div>
-          <div style={{ gridArea: "services" }} id="services">
-            services
-          </div>
           <Div
-            style={{ gridArea: "div1" }}
+            style={{ gridArea: "maintenance" }}
             // animate={show.itemThree}
             ref={refThree}
           >
