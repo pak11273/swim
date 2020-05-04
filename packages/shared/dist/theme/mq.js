@@ -19,7 +19,7 @@ exports.mq = Object.keys(sizes).reduce(function (acc, label) {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        return styled_components_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    @media (max-width: ", "px) {\n      ", ";\n    }\n  "], ["\n    @media (max-width: ", "px) {\n      ", ";\n    }\n  "])), sizes[label], styled_components_1.css.apply(void 0, args));
+        return styled_components_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    @media (min-width: ", "px) {\n      ", ";\n    }\n  "], ["\n    @media (min-width: ", "px) {\n      ", ";\n    }\n  "])), sizes[label], styled_components_1.css.apply(void 0, args));
     };
     return acc;
 }, {});
