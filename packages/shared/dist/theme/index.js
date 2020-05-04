@@ -19,8 +19,8 @@ exports.theme = {
     breakpoints: ["40em", "52em", "64em"],
     colors: colors_1.colors,
     background: background,
-    mq: mq_1.mq,
     space: [0, 4, 8, 16, 32, 64, 128, 256],
     transitions: transitions_1.transitions,
+    mq: mq_1.mq,
 };
 //# sourceMappingURL=index.js.map

@@ -1,5 +1,10 @@
-module.exports = {
-  serverRuntimeConfig: {
-    JWT_SECRET: 'changeme',
+const withCSS = require("@zeit/next-css")
+
+module.exports = withCSS({
+  cssLoaderOptions: {
+    url: false,
   },
-}
+  serverRuntimeConfig: {
+    JWT_SECRET: "changeme",
+  },
+})

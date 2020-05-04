@@ -1,8 +1,19 @@
-export const mq = {
-  xs: "360px",
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
-  xxl: "1824px",
+import { css } from "styled-components"
+
+const sizes = {
+  xs: 360,
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  xxl: 1824,
 }
+
+export const mq = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${sizes[label]}px) {
+      ${css(...args)};
+    }
+  `
+  return acc
+}, {})

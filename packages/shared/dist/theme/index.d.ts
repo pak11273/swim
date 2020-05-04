@@ -20,14 +20,6 @@ export declare const theme: {
         secondary: string;
         silver: string;
     };
-    mq: {
-        xs: string;
-        sm: string;
-        md: string;
-        lg: string;
-        xl: string;
-        xxl: string;
-    };
     space: number[];
     transitions: {
         cubic: (time: any) => string;
@@ -35,4 +27,5 @@ export declare const theme: {
         cubic3: (time: any) => string;
         ease: (time: any) => string;
     };
+    mq: {};
 };
