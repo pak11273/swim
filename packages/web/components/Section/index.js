@@ -7,7 +7,8 @@ export const Section = styled.div`
   display: flex;
   flex-direction: ${(props) => props.flexDirection || "column"};
   justify-content: ${(props) => props.justifyContent || "center"};
-  height: 900px;
+  padding: ${(props) => props.padding};
+  max-height: ${(props) => props.maxHeight};
   width: 100%;
   max-width: ${(props) => props.maxWidth};
   h3 {

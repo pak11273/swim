@@ -7,5 +7,6 @@ export const colors = {
   blue: "#0000ff",
   primary: "#1133aa",
   secondary: "#9873dd",
-  silver: "c0c0c0",
+  silver: "#c0c0c0",
+  highlight: "#f3ed46",
 }

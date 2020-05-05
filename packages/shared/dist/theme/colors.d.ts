@@ -7,4 +7,5 @@ export declare const colors: {
     primary: string;
     secondary: string;
     silver: string;
+    highlight: string;
 };

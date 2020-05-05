@@ -19,14 +19,43 @@ import styled from "styled-components"
 const StyledMasthead = styled(Section)`
   background: white url("assets/images/patric-wong-iIn9RMIlay8-unsplash.jpg")
     center/cover;
-  grid-area: ${(props) => props.area};
+  height: 900px;
   align-items: center;
   justify-content: center;
+  padding: 0 15px;
+  div:first-child {
+    ${(props) => props.theme.mq.md`
+      position: absolute;
+      top: 220px;
+      left: 10%;
+    `}
+    ${(props) => props.theme.mq.lg`
+      left: 30%;
+    `}
+  h3 {
+    font-size: 2rem;
+    font-family: "Oxygen", arial;
+    color: ${(props) => props.theme.colors.highlight};
+    text-shadow: 0 5px 5px black;
+    line-height: 2rem;
+    margin-top: 7rem;
+  }
+  h2 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+  h4 {
+    font-size: 2.5rem;
+    line-height: 2rem;
+  }
+  h6 {
+    margin: 40px 0 0 0;
+    font-size: 1.5rem;
+  }
 `
 // transform: translateX(${({ animate }) => (animate ? "0" : "-100vw")});
 const Div = styled.div`
   transition: transform 1s;
-  height: 900px;
   width: 100%;
   background-color: red;
 `
@@ -63,11 +92,13 @@ const StyledCleaning = styled(Section)`
       }
       h5 {
         font-size: 2.2rem;
+        line-height: 2rem;
         color: ${(props) => props.theme.colors.primary || "black"};
       }
       h6 {
         color: ${(props) => props.theme.colors.primary || "black"};
         font-size: 1.2rem;
+        line-height: 1.2rem;
       }
       > div:nth-child(1) {
       }
@@ -199,6 +230,26 @@ const StyledPeopleOutline = styled(PeopleOutline)`
   background: transparent;
   color: ${(props) => props.theme.colors.primary || "black"};
 `
+const StyledBox = styled(Box)`
+  display: none;
+  position: absolute;
+  bottom: -20px;
+  right: 20%;
+  img {
+    height: 700px;
+    background: transparent;
+  }
+  ${(props) => props.theme.mq.md`
+    right: 5%;
+    display: block;
+  `}
+  ${(props) => props.theme.mq.xl`
+    right: 15%;
+  `}
+  ${(props) => props.theme.mq.xxl`
+    right: 25%;
+  `}
+`
 
 const Index = (props) => {
   const [show, doShow] = useState({
@@ -212,30 +263,26 @@ const Index = (props) => {
     refThree = useRef(null)
 
   useEffect(() => {
-    const topPos = (element) => element.getBoundingClientRect().top
-
+    // const topPos = (element) => element.getBoundingClientRect().top
     // const element = document.getElementById("container")
     // const bodyRect = document.body.getBoundingClientRect()
     // const elemRect = element.getBoundingClientRect()
     // const offset = elemRect.top - bodyRect.top
-
-    const div1Pos = topPos(ourRef.current),
-      div2Pos = topPos(anotherRef.current),
-      div3Pos = topPos(refThree.current)
-
-    const onScroll = () => {
-      const scrollPos = window.scrollY + window.innerHeight
-      if (div1Pos < scrollPos) {
-        doShow((state) => ({ ...state, itemOne: true }))
-      } else if (div2Pos < scrollPos) {
-        doShow((state) => ({ ...state, itemTwo: true }))
-      } else if (div3Pos < scrollPos) {
-        doShow((state) => ({ ...state, itemThree: true }))
-      }
-    }
-
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
+    // const div1Pos = topPos(ourRef.current),
+    //   div2Pos = topPos(anotherRef.current),
+    //   div3Pos = topPos(refThree.current)
+    // const onScroll = () => {
+    //   const scrollPos = window.scrollY + window.innerHeight
+    //   if (div1Pos < scrollPos) {
+    //     doShow((state) => ({ ...state, itemOne: true }))
+    //   } else if (div2Pos < scrollPos) {
+    //     doShow((state) => ({ ...state, itemTwo: true }))
+    //   } else if (div3Pos < scrollPos) {
+    //     doShow((state) => ({ ...state, itemThree: true }))
+    //   }
+    // }
+    // window.addEventListener("scroll", onScroll)
+    // return () => window.removeEventListener("scroll", onScroll)
     /* 
        remove the event listener in the cleanup function 
        to prevent memory leaks
@@ -247,11 +294,11 @@ const Index = (props) => {
     var isScrolling = false
 
     function scrollReveal(e) {
-      if (window.scrollY > 100) {
-        top.style.display = "block"
-      } else {
-        top.style.display = "none"
-      }
+      // if (window.scrollY > 100) {
+      //   top.style.display = "block"
+      // } else {
+      //   top.style.display = "none"
+      // }
     }
     const projects = document.querySelectorAll(".project")
     const animateLeft = document.querySelectorAll(".animate--left")
@@ -304,7 +351,7 @@ const Index = (props) => {
   }
 
   return (
-    <Layout title="DP Pools" {...props}>
+    <Layout title="DP PoolCare" {...props}>
       <div id="container">
         <Grid
           areas={[
@@ -321,17 +368,21 @@ const Index = (props) => {
           <StyledMasthead gridArea="masthead">
             <Box>
               <h3>FREE ESTIMATES</h3>
-              <h2>DP Pools</h2>
-              <h4>Residential Pool and Spa Services</h4>
+              <h2>DP PoolCare</h2>
+              <h4>Pool & Spa Services</h4>
               <h6>Dallas/FtWorth</h6>
             </Box>
+            <StyledBox>
+              <img src="assets/images/stock-photo-car-mechanic-520750996.png" />
+            </StyledBox>
           </StyledMasthead>
           <StyledCleaning
             gridArea="cleaning"
+            padding="80px 0"
             // animate={show.itemOne}
             ref={ourRef}
           >
-            <Wrapper>
+            <Wrapper {...props}>
               <Flex>
                 <Flex>
                   <h5>Our Cleaning Routine</h5>
@@ -354,7 +405,7 @@ const Index = (props) => {
                 </Box>
               </Flex>
             </Wrapper>
-          </StyledCleaning>
+          </StyledCleaning>{" "}
           <StyledRepair gridArea="repair">
             <Wrapper>
               <Flex>

@@ -9,6 +9,7 @@ export declare const theme: {
         primary: string;
         secondary: string;
         silver: string;
+        highlight: string;
     };
     background: {
         white: string;
@@ -19,6 +20,7 @@ export declare const theme: {
         primary: string;
         secondary: string;
         silver: string;
+        highlight: string;
     };
     space: number[];
     transitions: {

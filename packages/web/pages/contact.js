@@ -15,7 +15,7 @@ const StyledMap = styled(Section)`
   background: url("assets/images/gray-map.jpg") center/cover;
 `
 const Contact = (props) => (
-  <Layout title="DP Pools | Contact" {...props}>
+  <Layout title="DP PoolCare | Contact" {...props}>
     <Grid areas={["masthead", "form", "map", "footer"]}>
       <StyledMasthead gridArea="masthead">
         <Wrapper maxWidth="1240px" flexDirection="column">
