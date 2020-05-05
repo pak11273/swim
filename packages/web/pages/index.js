@@ -70,6 +70,7 @@ const StyledCleaning = styled(Section)`
   color: black;
   > div {
     color: black;
+    background: transparent;
     max-width: 1240px;
     flex-direction: column-reverse;
     ${({ theme }) => theme.mq.md`
@@ -78,7 +79,6 @@ const StyledCleaning = styled(Section)`
   }
   > div:first-child {
     > div {
-      max-width: 510px;
       justify-content: flex-start;
       hr {
         text-align: left;
@@ -107,7 +107,9 @@ const StyledCleaning = styled(Section)`
   > div:nth-child(1) {
     img {
       width: 100%;
-      max-width: 480px;
+      ${(props) => props.theme.mq.xl`
+        min-width: 600px;
+      `}
     }
   }
 `
@@ -378,7 +380,7 @@ const Index = (props) => {
           </StyledMasthead>
           <StyledCleaning
             gridArea="cleaning"
-            padding="80px 0"
+            padding="120px 0"
             // animate={show.itemOne}
             ref={ourRef}
           >
