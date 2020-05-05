@@ -1,15 +1,11 @@
 import {
+  Accolades,
   AdditonalServices,
-  Box,
   Feature,
-  Flex,
   Grid,
   Layout,
-  Line,
   MastheadIndex,
   ScrollTop,
-  Section,
-  Wrapper,
 } from "components"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
 
@@ -25,35 +21,6 @@ const Div = styled.div`
 /* i'm using destructuring on the prop above */
 /* adding a conventional CSS class could look something like this:
 <div ref={ourRef} className={`defaultClass${show.itemOne ? " addedClass" : ""}`} /> */
-const StyledAccolades = styled(Section)`
-  flex-direction: row;
-  justify-content: space-evenly;
-  height: 300px;
-  background: lightgray;
-  img {
-    background: transparent;
-    height: 20px;
-  }
-  ${({ theme }) => theme.mq.sm`
-      img {
-        height: 80px;
-      }
-      > div {
-        max-width: 640px;
-      }
-    `}
-  ${({ theme }) => theme.mq.md`
-      img {
-        height: 80px;
-      }
-      > div {
-        max-width: 1240px;
-      }
-    `}
-`
-const AccoladesWrapper = styled(Wrapper)`
-  max-width: 200px;
-`
 
 const Index = (props) => {
   const [show, doShow] = useState({
@@ -190,6 +157,7 @@ const Index = (props) => {
             /* ref={ourRef} */
           />
           <Feature
+            reverse
             background='url("assets/images/blue-wave-1.png") no-repeat left bottom/cover'
             gridArea="maintenance"
             title="High Mainentance Standards"
@@ -224,19 +192,12 @@ const Index = (props) => {
             // ref={refThree}
             {...props}
           />
-          <StyledAccolades
+          <Accolades
             gridArea="accolades"
             // animate={show.itemTwo}
             ref={anotherRef}
-          >
-            <AccoladesWrapper>
-              <img src="assets/images/accolades/angielist.png" />
-              <img src="assets/images/accolades/nspf.png" />
-              <img src="assets/images/accolades/super.png" />
-              <img src="assets/images/accolades/ipssa.png" />
-              <img src="assets/images/accolades/contractor.png" />
-            </AccoladesWrapper>
-          </StyledAccolades>
+            {...props}
+          />
         </Grid>
       </div>
     </Layout>

@@ -1,5 +1,6 @@
 export * from "./Box"
 export * from "./NavBar"
+export * from "./Pages/index/Accolades"
 export * from "./Pages/index/AdditionalServices"
 export * from "./Pages/index/Feature"
 export * from "./Pages/index/MastheadIndex"

@@ -3,6 +3,7 @@ import { Box, Grid, Layout, Section, Wrapper } from "components"
 import styled from "styled-components"
 
 const StyledMasthead = styled(Section)`
+  height: 900px;
   background: blue url("assets/images/darren-miller-F0MmnUS2fwc-unsplash.jpg")
     center/cover;
   grid-area: ${(props) => props.gridArea};

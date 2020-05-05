@@ -20,7 +20,7 @@ const StyledSection = styled((props) => <Section {...props} />)`
     max-width: 1240px;
     flex-direction: column-reverse;
     ${({ theme }) => theme.mq.md`
-      flex-direction: row;
+      flex-direction: ${(props) => (props.reverse ? "row-reverse" : "row")};
     `}
   }
   > div:first-child {
