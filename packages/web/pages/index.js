@@ -233,7 +233,7 @@ const StyledPeopleOutline = styled(PeopleOutline)`
 const StyledBox = styled(Box)`
   display: none;
   position: absolute;
-  bottom: -20px;
+  bottom: 33px;
   right: 20%;
   img {
     height: 700px;
