@@ -4,7 +4,7 @@ import {
   GridArea,
   Logo,
   NavBtn,
-  NavMenu,
+  NavResponsive,
   Text,
   Wrapper,
   XBurger,
@@ -36,7 +36,7 @@ const StyledGridArea = styled((props) => <GridArea {...props} />)`
   z-index: 1;
 `
 const links = [
-  // { label: "Services", href: "/#services" },
+  { label: "Services", href: "/#services" },
   { label: "Contact", href: "/contact" },
 ]
 
@@ -46,7 +46,7 @@ const StyledFlex = styled.div`
   max-width: 80px;
   width: 100%;
   @media (min-width: 640px) {
-    max-width: 300px;
+    max-width: 360px;
   }
 `
 
@@ -121,7 +121,7 @@ export const NavBar = (props) => {
           <XBurger open={open} setOpen={setOpen} />
         </StyledFlex>
       </Wrapper>
-      <NavMenu open={open} passHref {...props} links={links} />
+      <NavResponsive open={open} passHref {...props} links={links} />
     </StyledGridArea>
   )
 }

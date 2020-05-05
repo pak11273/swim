@@ -5,8 +5,8 @@ export const colors = {
   red: "#ff0000",
   green: "#00ff00",
   blue: "#0000ff",
-  primary: "#1133aa",
-  secondary: "#9873dd",
+  primary: "#005075",
+  secondary: "#73ddc9",
   silver: "#c0c0c0",
   highlight: "#f3ed46",
 }

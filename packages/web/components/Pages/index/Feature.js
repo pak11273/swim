@@ -1,9 +1,10 @@
 import { Box, Flex, Line, Section, Wrapper } from "components"
 
+import { lighten } from "polished"
 import styled from "styled-components"
 
 const StyledSection = styled((props) => <Section {...props} />)`
-  background: ${(props) => props.background || "black"};
+  background: ${(props) => props.background || "lightcoral"};
   padding: 0;
   width: 100%;
   justify-content: center;
@@ -43,13 +44,15 @@ const StyledSection = styled((props) => <Section {...props} />)`
         color: ${(props) => props.theme.colors.primary || "black"};
       }
       h2 {
-        color: rgba(0, 0, 0, 0.5);
+        color: ${(props) =>
+          lighten(0.1, props.theme.colors.primary) || "black"};
         font-size: 1.2rem;
         line-height: 1.5rem;
         text-transform: none;
       }
       h6 {
-        color: rgba(0, 0, 0, 0.5);
+        color: ${(props) =>
+          lighten(0.1, props.theme.colors.primary) || "black"};
         font-size: 1.2rem;
         line-height: 1.5rem;
       }

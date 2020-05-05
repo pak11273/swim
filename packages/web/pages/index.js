@@ -65,11 +65,11 @@ const Index = (props) => {
     var isScrolling = false
 
     function scrollReveal(e) {
-      // if (window.scrollY > 100) {
-      //   top.style.display = "block"
-      // } else {
-      //   top.style.display = "none"
-      // }
+      if (window.scrollY > 100) {
+        top.style.display = "block"
+      } else {
+        top.style.display = "none"
+      }
     }
     const projects = document.querySelectorAll(".project")
     const animateLeft = document.querySelectorAll(".animate--left")
@@ -142,6 +142,7 @@ const Index = (props) => {
             background='white url("assets/images/patric-wong-iIn9RMIlay8-unsplash.jpg") center/cover'
           />
           <Feature
+            id="services"
             background='url("assets/images/blue-wave-2.png") no-repeat right top/cover'
             gridArea="cleaning"
             title="Pristine Pools"
@@ -195,7 +196,7 @@ const Index = (props) => {
           <Accolades
             gridArea="accolades"
             // animate={show.itemTwo}
-            ref={anotherRef}
+            // ref={anotherRef}
             {...props}
           />
         </Grid>

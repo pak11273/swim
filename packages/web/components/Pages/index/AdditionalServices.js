@@ -3,7 +3,7 @@ import { Box, Flex, Line, Section } from "components"
 import { MeetingRoom } from "@styled-icons/material-outlined/MeetingRoom"
 import { PeopleOutline } from "@styled-icons/material-outlined/PeopleOutline"
 import { Spa } from "@styled-icons/boxicons-regular/Spa"
-import { SwimmingPool } from "@styled-icons/fa-solid/SwimmingPool"
+import { lighten } from "polished"
 import styled from "styled-components"
 
 const StyledSection = styled((props) => <Section {...props} />)`
@@ -18,7 +18,7 @@ const StyledSection = styled((props) => <Section {...props} />)`
       color: ${(props) => props.theme.colors.primary || "black"};
     }
     > h6 {
-      color: ${(props) => props.theme.colors.primary || "black"};
+      color: ${(props) => lighten(0.1, props.theme.colors.primary) || "black"};
       font-size: 1.2rem;
     }
     width: 100%;
@@ -29,11 +29,14 @@ const StyledSection = styled((props) => <Section {...props} />)`
     div {
       margin: 25px;
       > h6 {
-        color: ${(props) => props.theme.colors.primary || "black"};
+        color: ${(props) =>
+          lighten(0.1, props.theme.colors.primary) || "black"};
         font-size: 1.4rem;
       }
       width: 200px;
       p {
+        color: ${(props) =>
+          lighten(0.1, props.theme.colors.primary) || "black"};
         line-height: 1.5rem;
       }
     }

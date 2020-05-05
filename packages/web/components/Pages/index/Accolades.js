@@ -6,38 +6,28 @@ import styled from "styled-components"
 const StyledAccolades = styled((props) => <Section {...props} />)`
   flex-direction: row;
   justify-content: space-evenly;
-  height: 200px;
-  background: ${(props) => lighten(0.55, props.theme.colors.primary)};
+  height: 120px;
+  background: ${({ theme }) => lighten(0.4, theme.colors.primary)};
   img {
     background: transparent;
     height: 20px;
   }
-  ${({ theme }) => theme.mq.sm`
-      img {
-        height: 80px;
-      }
-      > div {
-        max-width: 640px;
-      }
-    `}
   ${({ theme }) => theme.mq.md`
       img {
         height: 80px;
-      }
-      > div {
-        max-width: 1240px;
       }
     `}
 `
 const StyledWrapper = styled((props) => <Wrapper {...props} />)`
-  ${({ theme }) => theme.mq.md`
-    width: 800px;
-  `}
+  background: transparent;
+  ${(props) => props.theme.mq.md`
+      max-width: 800px
+    `}
 `
 
-export const Accolades = () => (
-  <StyledAccolades>
-    <StyledWrapper maxWidth="100px">
+export const Accolades = (props) => (
+  <StyledAccolades {...props}>
+    <StyledWrapper {...props}>
       <img src="assets/images/accolades/angielist.png" />
       <img src="assets/images/accolades/nspf.png" />
       <img src="assets/images/accolades/super.png" />

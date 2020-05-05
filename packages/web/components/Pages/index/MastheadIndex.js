@@ -24,6 +24,7 @@ const StyledBox = styled(Box)`
 `
 
 const StyledMasthead = styled((props) => <Section {...props} />)`
+  background: lightcoral;
   height: 900px;
   align-items: center;
   justify-content: center;

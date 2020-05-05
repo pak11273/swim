@@ -4,8 +4,8 @@ import styled from "styled-components"
 
 const StyledMasthead = styled(Section)`
   height: 900px;
-  background: blue url("assets/images/darren-miller-F0MmnUS2fwc-unsplash.jpg")
-    center/cover;
+  background: lightcoral
+    url("assets/images/darren-miller-F0MmnUS2fwc-unsplash.jpg") center/cover;
   grid-area: ${(props) => props.gridArea};
   align-items: center;
   justify-content: center;

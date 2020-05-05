@@ -7,15 +7,18 @@ const StyledMenu = styled.div`
   display: flex;
   transition: transform 0.3s ease-in-out;
   flex-direction: column;
-  height: 200px;
+  height: 100px;
   justify-content: center;
   position: absolute;
-  top: 87px;
+  top: 86px;
   right: 0;
   text-align: left;
   width: 100%;
   transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-200%)")};
   z-index: -1;
+  button {
+    margin: 10px;
+  }
   @media (min-width: 640px) {
     display: none;
   }
@@ -34,7 +37,7 @@ const StyledA = styled.a`
     color: ${(props) => props.theme.colors.secondary};
   }
 `
-export const NavMenu = (props) => {
+export const NavResponsive = (props) => {
   //   const handleClick = (e, link) => {
   //     e.preventDefault
   //     console.log("link: ", link)
