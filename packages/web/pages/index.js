@@ -177,7 +177,6 @@ const Index = (props) => {
           <Feature
             background='url("assets/images/blue-wave-2.png") no-repeat right top/cover'
             gridArea="cleaning"
-            padding="120px 0"
             title="Pristine Pools"
             subtitle="Our cleaning services come with impeccable quality. We ensure your pool has a fresh clean look every visit."
             features={[
@@ -191,10 +190,8 @@ const Index = (props) => {
             /* ref={ourRef} */
           />
           <Feature
-            reverse
             background='url("assets/images/blue-wave-1.png") no-repeat left bottom/cover'
             gridArea="maintenance"
-            padding="120px 0"
             title="High Mainentance Standards"
             subtitle="Our maintenance comes with the highest industry standards"
             features={[
@@ -209,7 +206,6 @@ const Index = (props) => {
           <Feature
             background='url("assets/images/blue-wave-2.png") no-repeat left bottom/cover'
             gridArea="repair"
-            padding="120px 0"
             title="Expert Pool Repair"
             subtitle="We strive to make your pool a safe place. Our number one priority is to make your pool a safe zone for all visitors. We will repair and/or replace any damaged areas or parts."
             features={[
