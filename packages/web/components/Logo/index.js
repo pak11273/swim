@@ -4,17 +4,17 @@ import styled from "styled-components"
 
 const StyledLink = styled.a``
 
-const StyledIcon = styled(Home4)`
+const StyledIcon = styled((props) => <Home4 {...props} />)`
   color: ${(props) => props.theme.colors.primary};
   &:hover {
     color: ${(props) => props.theme.colors.secondary};
   }
 `
 
-export const Logo = ({ href }) => (
-  <Link href={href} passHref>
+export const Logo = (props) => (
+  <Link href={props.href} passHref>
     <StyledLink>
-      <StyledIcon size={48} />
+      <StyledIcon size={48} {...props} />
     </StyledLink>
   </Link>
 )

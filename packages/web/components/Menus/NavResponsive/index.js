@@ -44,15 +44,17 @@ export const NavResponsive = (props) => {
   //   }
   return (
     <StyledMenu open={props.open}>
+      {console.log(props)}
       {props.links.map((link, i) => (
-        <button
-          key={i}
-          href={link.href}
-          onClick={() => {
-            handleClick(link.href)
-          }}
-        >
-          <StyledA href="/contact" {...props}>
+        <button key={i} href={link.href}>
+          {console.log("link: ", link.href)}
+          <StyledA
+            href={link.href}
+            {...props}
+            // style={{
+            //   color: props.router.asPath === link.href ? "red" : "black",
+            // }}
+          >
             {link.label}
           </StyledA>
         </button>

@@ -121,7 +121,13 @@ export const NavBar = (props) => {
           <XBurger open={open} setOpen={setOpen} />
         </StyledFlex>
       </Wrapper>
-      <NavResponsive open={open} passHref {...props} links={links} />
+      <NavResponsive
+        router={router}
+        open={open}
+        passHref
+        {...props}
+        links={links}
+      />
     </StyledGridArea>
   )
 }
