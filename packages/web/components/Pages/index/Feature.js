@@ -90,30 +90,32 @@ const StyledSection = styled((props) => <Section {...props} />)`
 `
 
 export const Feature = (props) => {
-  ;<StyledSection {...props}>
-    <Wrapper>
-      <Flex>
+  return (
+    <StyledSection {...props}>
+      <Wrapper>
         <Flex>
-          <h5>{props.title}</h5>
+          <Flex>
+            <h5>{props.title}</h5>
+          </Flex>
+          <Line />
+          <Flex>
+            <h2>{props.subtitle}</h2>
+            <ul>
+              {props.features &&
+                props.features.map((feature, i) => (
+                  <li key={i}>
+                    <h6>{feature}</h6>
+                  </li>
+                ))}
+            </ul>
+          </Flex>
         </Flex>
-        <Line />
         <Flex>
-          <h2>{props.subtitle}</h2>
-          <ul>
-            {props.features &&
-              props.features.map((feature, i) => (
-                <li key={i}>
-                  <h6>{feature}</h6>
-                </li>
-              ))}
-          </ul>
+          <Box>
+            <img src={props.img} />
+          </Box>
         </Flex>
-      </Flex>
-      <Flex>
-        <Box>
-          <img src={props.img} />
-        </Box>
-      </Flex>
-    </Wrapper>
-  </StyledSection>
+      </Wrapper>
+    </StyledSection>
+  )
 }
