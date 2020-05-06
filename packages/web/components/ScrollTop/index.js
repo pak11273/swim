@@ -6,6 +6,7 @@ const StyledArrowUpCircle = styled(ArrowUpCircle)`
   cursor: pointer;
   background: transparent;
   margin: 1rem;
+  z-index: 10;
 `
 
 export const ScrollTop = ({ scrollToTop }) => (

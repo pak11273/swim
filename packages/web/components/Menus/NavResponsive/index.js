@@ -1,4 +1,3 @@
-import Link from "next/link"
 import styled from "styled-components"
 
 const StyledMenu = styled.div`
@@ -38,22 +37,19 @@ const StyledA = styled.a`
   }
 `
 export const NavResponsive = (props) => {
-  //   const handleClick = (e, link) => {
-  //     e.preventDefault
-  //     console.log("link: ", link)
-  //   }
   return (
     <StyledMenu open={props.open}>
-      {console.log(props)}
       {props.links.map((link, i) => (
         <button key={i} href={link.href}>
-          {console.log("link: ", link.href)}
           <StyledA
             href={link.href}
             {...props}
-            // style={{
-            //   color: props.router.asPath === link.href ? "red" : "black",
-            // }}
+            style={{
+              color:
+                props.router.asPath === link.href
+                  ? props.colors.secondary
+                  : props.colors.primary,
+            }}
           >
             {link.label}
           </StyledA>

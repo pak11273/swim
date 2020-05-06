@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 const StyledSection = styled((props) => <Section {...props} />)`
   background: ${(props) => props.background || "lightcoral"};
+  position: relative;
   padding: 0;
   width: 100%;
   justify-content: center;
@@ -13,6 +14,7 @@ const StyledSection = styled((props) => <Section {...props} />)`
       padding: 100px;
     `}
   > div {
+    z-index: 2;
     padding: 20px;
     box-shadow: 0 10px 10px gray;
     border-radius: 5px;
@@ -73,6 +75,17 @@ const StyledSection = styled((props) => <Section {...props} />)`
         min-width: 600px;
       `}
     }
+  }
+  :after {
+    content: "";
+    background: white;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
   }
 `
 

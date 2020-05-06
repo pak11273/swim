@@ -35,10 +35,7 @@ const StyledGridArea = styled((props) => <GridArea {...props} />)`
     props.shadow === "true" ? "0 4px 8px black" : "none"};
   z-index: 1;
 `
-const links = [
-  { label: "Services", href: "/#services" },
-  { label: "Contact", href: "/contact" },
-]
+const links = [{ label: "Contact", href: "/contact" }]
 
 const StyledFlex = styled.div`
   padding: ${(props) => props.padding};
