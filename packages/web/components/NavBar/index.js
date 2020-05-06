@@ -33,7 +33,7 @@ const StyledGridArea = styled((props) => <GridArea {...props} />)`
   width: 100%;
   box-shadow: ${(props) =>
     props.shadow === "true" ? "0 4px 8px black" : "none"};
-  z-index: 1;
+  z-index: 10;
 `
 const links = [{ label: "Contact", href: "/contact" }]
 

@@ -89,8 +89,8 @@ const StyledSection = styled((props) => <Section {...props} />)`
   }
 `
 
-export const Feature = (props) => (
-  <StyledSection {...props}>
+export const Feature = (props) => {
+  ;<StyledSection {...props}>
     <Wrapper>
       <Flex>
         <Flex>
@@ -116,4 +116,4 @@ export const Feature = (props) => (
       </Flex>
     </Wrapper>
   </StyledSection>
-)
+}

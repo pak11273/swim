@@ -33,32 +33,26 @@ const Index = (props) => {
     anotherRef = useRef(null),
     refThree = useRef(null)
 
-  useEffect(() => {
-    // const topPos = (element) => element.getBoundingClientRect().top
-    // const element = document.getElementById("container")
-    // const bodyRect = document.body.getBoundingClientRect()
-    // const elemRect = element.getBoundingClientRect()
-    // const offset = elemRect.top - bodyRect.top
-    // const div1Pos = topPos(ourRef.current),
-    //   div2Pos = topPos(anotherRef.current),
-    //   div3Pos = topPos(refThree.current)
-    // const onScroll = () => {
-    //   const scrollPos = window.scrollY + window.innerHeight
-    //   if (div1Pos < scrollPos) {
-    //     doShow((state) => ({ ...state, itemOne: true }))
-    //   } else if (div2Pos < scrollPos) {
-    //     doShow((state) => ({ ...state, itemTwo: true }))
-    //   } else if (div3Pos < scrollPos) {
-    //     doShow((state) => ({ ...state, itemThree: true }))
-    //   }
-    // }
-    // window.addEventListener("scroll", onScroll)
-    // return () => window.removeEventListener("scroll", onScroll)
-    /* 
-       remove the event listener in the cleanup function 
-       to prevent memory leaks
-    */
-  }, [])
+  // useEffect(() => {
+  // const topPos = (element) => element.getBoundingClientRect().top
+
+  //   const div1Pos = topPos(ourRef.current),
+  //     div2Pos = topPos(anotherRef.current),
+  //     div3Pos = topPos(refThree.current)
+
+  //   const onScroll = () => {
+  //     const scrollPos = window.scrollY + window.innerHeight
+  //     if (div1Pos < scrollPos) {
+  //       doShow((state) => ({ ...state, itemOne: true }))
+  //     } else if (div2Pos < scrollPos) {
+  //       doShow((state) => ({ ...state, itemTwo: true }))
+  //     } else if (div3Pos < scrollPos) {
+  //       doShow((state) => ({ ...state, itemThree: true }))
+  //     }
+  //   }
+  //   window.addEventListener("scroll", onScroll)
+  //   return () => window.removeEventListener("scroll", onScroll)
+  // }, [])
 
   useEffect(() => {
     var top = document.getElementById("scrollTop")
@@ -185,7 +179,7 @@ const Index = (props) => {
             ]}
             img="assets/images/337387834.jpg"
             /* animate={show.itemOne} */
-            /* ref={ourRef} */
+            // ref={ourRef}
           />
           <AdditonalServices
             gridArea="additional"
