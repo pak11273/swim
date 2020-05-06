@@ -1,3 +1,4 @@
+export * from "./Analytics"
 export * from "./Box"
 export * from "./NavBar"
 export * from "./Pages/index/Accolades"
