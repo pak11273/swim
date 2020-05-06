@@ -6,6 +6,8 @@ var logger = require("morgan")
 var bodyParser = require("body-parser")
 var nodemailer = require("nodemailer")
 var cors = require("cors")
+var dotenv = require("dotenv")
+dotenv.config()
 
 var indexRouter = require("./routes/index")
 var usersRouter = require("./routes/users")
@@ -21,20 +23,13 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "public")))
-
-app.use("/", indexRouter)
-app.use("/users", usersRouter)
-
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(cors())
-
-// app.listen(port, () => {
-//   console.log("We are live on port ${port}")
-// })
-
-app.post("/api/v1", (req, res) => {
+app.use("/", indexRouter)
+app.use("/users", usersRouter)
+app.post("/api/contact", (req, res) => {
   var data = req.body
 
   // node-mailer
@@ -42,15 +37,15 @@ app.post("/api/v1", (req, res) => {
     service: "Gmail",
     port: 465,
     auth: {
-      user: "USERNAME",
-      pass: "PASSWORD",
+      user: process.env.GMAIL_USERNAME, // "USERNAME"
+      pass: process.env.GMAIL_PASSWORD, // "PASSWORD"
     },
   })
 
   var mailOptions = {
     from: data.email,
-    to: "ENTER_YOUR_EMAIL",
-    subject: "ENTER_YOUR_SUBJECT",
+    to: "dppoolserv@gmail.com",
+    subject: data.subject,
     html: `<p>${data.name}</p>
           <p>${data.email}</p>
           <p>${data.message}</p>`,
@@ -58,7 +53,7 @@ app.post("/api/v1", (req, res) => {
 
   smtpTransport.sendMail(mailOptions, (error, response) => {
     if (error) {
-      res.send(error)
+      res.send(`ERROR: ${error}`)
     } else {
       res.send("Success")
     }
