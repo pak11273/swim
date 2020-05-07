@@ -25,6 +25,7 @@ const StyledFlex = styled.div`
 export const ContactForm = () => {
   const [state, changeState] = useState({
     name: "",
+    phone: "",
     message: "",
     subject: "",
     email: "",
@@ -35,11 +36,12 @@ export const ContactForm = () => {
   const resetForm = () => {
     changeState({
       name: "",
+      phone: "",
       message: "",
       subject: "",
       email: "",
       sent: false,
-      buttonText: "Sent",
+      buttonText: "Send",
     })
   }
 
@@ -57,6 +59,8 @@ export const ContactForm = () => {
 
     let data = {
       name: state.name,
+      phone: state.phone,
+      subject: state.subject,
       email: state.email,
       message: state.message,
     }
@@ -89,16 +93,28 @@ export const ContactForm = () => {
 
   return (
     <StyledForm onSubmit={async (e) => await formSubmit(e)}>
+      <Flex>
+        <Label name="name" htmlFor="name">
+          Name
+        </Label>
+        <Input
+          onChange={(e) => onChange(e)}
+          name="name"
+          type="text"
+          value={state.name || ""}
+          required
+        />
+      </Flex>
       <Flex padding="0">
         <StyledFlex>
-          <Label name="name" htmlFor="name">
-            Name
+          <Label name="phone" htmlFor="phone">
+            Phone
           </Label>
           <Input
             onChange={(e) => onChange(e)}
-            name="name"
-            type="text"
-            value={state.name || ""}
+            name="phone"
+            type="tel"
+            value={state.phone || ""}
             required
           />
         </StyledFlex>

@@ -47,10 +47,11 @@ app.post("/api/contact", (req, res) => {
     from: data.email,
     to: "dppoolserv@gmail.com",
     subject: data.subject,
-    html: `<h5>Contact Name: ${data.name}</h5>
-          <h6>Subject: ${data.subject}</h6>
-          <h6>Email: ${data.email}</h6>
-          <p>Message: ${data.message}</p>`,
+    html: `<h2>Contact Name: ${data.name}</h2>
+          <h2>Phone: ${data.phone}</h2>
+          <h4>Subject: ${data.subject}</h4>
+          <h4>Email: ${data.email}</h4>
+          <h4>Message: ${data.message}</h4>`,
   }
 
   smtpTransport.sendMail(mailOptions, (error, response) => {

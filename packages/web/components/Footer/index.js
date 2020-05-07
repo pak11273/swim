@@ -142,7 +142,7 @@ export const Footer = (props) => {
               <Title>Phone</Title>
               <ul>
                 <li>
-                  <StyledText>0123 456 7890</StyledText>
+                  <StyledText>903 487 8090</StyledText>
                 </li>
                 <li>
                   <StyledText>Mon-Fri 8:00am -</StyledText>
@@ -159,7 +159,7 @@ export const Footer = (props) => {
               <Title>Mail</Title>
               <ul>
                 <li>
-                  <StyledText>support@dppools.com</StyledText>
+                  <StyledText>support@dppoolserv@gmail.com</StyledText>
                 </li>
                 <li>
                   <StyledText>24x7 online support</StyledText>
@@ -228,7 +228,7 @@ export const Footer = (props) => {
               <li>
                 <a>Privacy Policy</a>
               </li> */}
-              <li>&copy; 2020 Copyright DP Pools</li>
+              <li>&copy; 2020 Copyright DP Pool Service</li>
             </ul>
           </Column>
         </LegalFooter>

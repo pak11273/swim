@@ -1,5 +1,4 @@
-import { Footer, NavBar } from "components"
-import { initGA, logPageView } from "components"
+import { Footer, Gap, NavBar, initGA, logPageView } from "components"
 
 import Head from "next/head"
 import { useEffect } from "react"
@@ -19,10 +18,9 @@ export const Layout = (props) => {
         <title>{props.title || ""}</title>
       </Head>
       <NavBar id="navbar" gridArea="navbar" {...props} />
-
+      <Gap margin="0px" />
       {props.children}
-
-      <Footer {...props} />
+      <Footer {...props} gridArea="footer" />
     </div>
   )
 }

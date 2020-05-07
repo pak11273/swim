@@ -1,10 +1,10 @@
 import {
-  Accolades,
   AdditonalServices,
   Feature,
+  FeatureServices,
   Grid,
   Layout,
-  MastheadIndex,
+  MastheadServices,
   ScrollTop,
 } from "components"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
@@ -22,7 +22,7 @@ const Div = styled.div`
 /* adding a conventional CSS class could look something like this:
 <div ref={ourRef} className={`defaultClass${show.itemOne ? " addedClass" : ""}`} /> */
 
-const Index = (props) => {
+const Services = (props) => {
   const [show, doShow] = useState({
     itemOne: false,
     itemTwo: false,
@@ -118,81 +118,36 @@ const Index = (props) => {
   return (
     <Layout title="DP Pool Service" {...props}>
       <div id="container">
-        <Grid
-          areas={[
-            "masthead",
-            "cleaning",
-            "maintenance",
-            "repair",
-            "additional",
-            "div3",
-            "accolades",
-          ]}
-        >
+        <Grid areas={["masthead", "additional"]}>
           <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
-          <MastheadIndex
+          <MastheadServices
             gridArea="masthead"
             background='white url("assets/images/patric-wong-iIn9RMIlay8-unsplash.jpg") center/cover'
-          />
-          <Feature
-            id="services"
-            background='url("assets/images/blue-wave-2.png") no-repeat right top/cover'
-            gridArea="cleaning"
-            title="Pristine Pools"
-            subtitle="Our cleaning services come with impeccable quality. We ensure your pool has a fresh clean look every visit."
-            features={[
-              "Pool Vacuuming",
-              "Pool Skimming",
-              "Tile Brushing",
-              "Deck Spraying",
-            ]}
-            img="assets/images/286975408.jpg"
-            /* animate={show.itemOne} */
-            /* ref={ourRef} */
-          />
-          <Feature
-            reverse
-            background='url("assets/images/blue-wave-1.png") no-repeat left bottom/cover'
-            gridArea="maintenance"
-            title="High Mainentance Standards"
-            subtitle="Our maintenance comes with the highest industry standards"
-            features={[
-              "Chemical balancing",
-              "Thorough equipment check",
-              "Recommendations",
-            ]}
-            img="assets/images/high-standards.jpg"
-            /* animate={show.itemOne} */
-            /* ref={ourRef} */
-          />
-          <Feature
-            background='url("assets/images/blue-wave-2.png") no-repeat left bottom/cover'
-            gridArea="repair"
-            title="Expert Pool Repair"
-            subtitle="Our licensed technicians can diagnose, upgrade, and repair your pool equipment.  This includes:"
-            features={[
-              "Chlorinators",
-              "Displays",
-              "Filters",
-              "Heaters",
-              "Motors",
-              "Timers",
-              "Valves",
-            ]}
-            img="assets/images/305185702.jpg"
-            /* animate={show.itemOne} */
-            // ref={ourRef}
-          />
+          >
+            <FeatureServices
+              title="Premier"
+              subtitle="Our cleaning services come with impeccable quality. We ensure your pool has a fresh clean look every visit."
+              features={[
+                "Pool Vacuuming",
+                "Pool Skimming",
+                "Tile Brushing",
+                "Deck Spraying",
+              ]}
+            />
+            <FeatureServices
+              title="Standard"
+              subtitle="Our maintenance comes with the highest industry standards"
+              features={[
+                "Chemical balancing",
+                "Thorough equipment check",
+                "Expert recommendations",
+              ]}
+            />
+          </MastheadServices>
           <AdditonalServices
             gridArea="additional"
             // animate={show.itemThree}
             // ref={refThree}
-            {...props}
-          />
-          <Accolades
-            gridArea="accolades"
-            // animate={show.itemTwo}
-            // ref={anotherRef}
             {...props}
           />
         </Grid>
@@ -201,4 +156,4 @@ const Index = (props) => {
   )
 }
 
-export default Index
+export default Services
