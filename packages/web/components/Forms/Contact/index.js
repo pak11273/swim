@@ -14,7 +14,9 @@ const StyledForm = styled.form`
   max-width: 1248px;
 `
 
-const StyledFlex = styled((props) => <Flex {...props} />)`
+const StyledFlex = styled.div`
+  padding: 14px;
+  width: 100%;
   ${(props) => props.theme.mq.sm`
     width: 50%;
   `}
@@ -48,8 +50,6 @@ export const ContactForm = () => {
 
   const formSubmit = async (e) => {
     e.preventDefault()
-
-    console.log(state)
 
     changeState({
       buttonText: "...sending",
@@ -87,15 +87,6 @@ export const ContactForm = () => {
       })
   }
 
-  //   axios
-  //     .post("API_URI", data)
-  //     .then((res) => {
-  //       this.setState({ sent: true }, this.resetForm())
-  //     })
-  //     .catch(() => {
-  //       console.log("Message not sent")
-  //     })
-
   return (
     <StyledForm onSubmit={async (e) => await formSubmit(e)}>
       <Flex padding="0">
@@ -132,7 +123,7 @@ export const ContactForm = () => {
           onChange={(e) => onChange(e)}
           name="subject"
           type="text"
-          value={state.name || ""}
+          value={state.subject || ""}
           required
         />
       </Flex>
