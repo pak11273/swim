@@ -1,7 +1,10 @@
 import styled from "styled-components"
 
 export const Wrapper = styled.div`
-  align-items: center;
+  align-items: ${(props) => props.alignItems || "center"};
+  ${(props) => props.theme.mq.sm`
+    align-items: center;
+  `}
   background: ${(props) => props.background || "transparent"};
   flex-direction: ${(props) => props.flexDirection || "row"};
   display: flex;

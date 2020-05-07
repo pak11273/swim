@@ -31,6 +31,7 @@ app.use("/", indexRouter)
 app.use("/users", usersRouter)
 app.post("/api/contact", (req, res) => {
   var data = req.body
+  console.log(data)
 
   // node-mailer
   var smtpTransport = nodemailer.createTransport({
@@ -55,7 +56,15 @@ app.post("/api/contact", (req, res) => {
     if (error) {
       res.send(`ERROR: ${error}`)
     } else {
-      res.send("Success")
+      res.setHeader("Access-Control-Allow-Origin", "*")
+      res.setHeader("Access-Control-Allow-Credentials", "true")
+      res.setHeader("Access-Control-Max-Age", "1800")
+      res.setHeader("Access-Control-Allow-Headers", "content-type")
+      res.setHeader(
+        "Access-Control-Allow-Methods",
+        "PUT, POST, GET, DELETE, PATCH, OPTIONS"
+      )
+      res.json({ email: "Success" })
     }
     smtpTransport.close()
   })

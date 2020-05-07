@@ -27,7 +27,7 @@ const Contact = (props) => (
     <Grid areas={["masthead", "map", "footer"]}>
       <StyledMasthead gridArea="masthead">
         <Wrapper
-          style={{ display: "none" }}
+          alignItems="flex-start"
           maxWidth="1240px"
           flexDirection="column"
         >

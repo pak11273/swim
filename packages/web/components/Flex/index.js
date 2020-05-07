@@ -7,4 +7,5 @@ export const Flex = styled.div`
   align-items: ${(props) => props.alignItems || "center"};
   padding: ${(props) => props.padding || "14px"};
   width: ${(props) => props.width || "100%"};
+  min-width: ${(props) => props.minWidth};
 `
