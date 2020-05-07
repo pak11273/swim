@@ -96,7 +96,7 @@ export const NavBar = (props) => {
           <Flex width="334px">
             <StyledPhone size={18} md-display="none" />
             <StyledText fontSize="1.3rem" color={`${props.colors.primary}`}>
-              903.867.5309
+              903.487.8090
             </StyledText>
           </Flex>
           <StyledBox padding="0 1rem 0 0">

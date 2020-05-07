@@ -64,8 +64,10 @@ export const MastheadIndex = (props) => (
   <StyledMasthead gridArea="masthead" {...props}>
     <Box>
       <h3>FREE ESTIMATES</h3>
-      <h2>DP PoolCare</h2>
-      <h4>Pool & Spa Services</h4>
+      <h2 style={{ textShadow: "0 10px 10px black" }}>DP Pool Service</h2>
+      <h4 style={{ textTransform: "none", textShadow: "0 10px 10px black" }}>
+        Enjoying your pool?
+      </h4>
       <h6>Dallas/FtWorth</h6>
     </Box>
     <StyledBox>

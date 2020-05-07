@@ -116,7 +116,7 @@ const Index = (props) => {
   }
 
   return (
-    <Layout title="DP PoolCare" {...props}>
+    <Layout title="DP Pool Service" {...props}>
       <div id="container">
         <Grid
           areas={[

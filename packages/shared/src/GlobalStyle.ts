@@ -14,7 +14,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     background-color: ${(props) => props.theme.colors.white};
     font-size: 16px;
-    font-family: 'Oxygen', sans-serif;
+    /* font-family: 'Oxygen', sans-serif; */
+    font-family: 'Jose fin', sans-serif;
     font-family: 'Source Sans Pro', sans-serif;
   }
 
