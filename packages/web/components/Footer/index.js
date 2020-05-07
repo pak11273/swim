@@ -43,6 +43,28 @@ const SocialFooter = styled.section`
   }
   width: 100%;
 `
+
+const StyledFacebookCircle = styled(FacebookCircle)`
+  &:hover {
+    color: ${(props) => props.theme.colors.secondary};
+  }
+`
+const StyledTwitter = styled(Twitter)`
+  &:hover {
+    color: ${(props) => props.theme.colors.secondary};
+  }
+`
+const StyledGooglePlusCircle = styled(GooglePlusCircle)`
+  &:hover {
+    color: ${(props) => props.theme.colors.secondary};
+  }
+`
+const StyledLinkedinSquare = styled(LinkedinSquare)`
+  &:hover {
+    color: ${(props) => props.theme.colors.secondary};
+  }
+`
+
 const LegalFooter = styled.section`
   display: flex;
   flex-wrap: wrap;
@@ -150,23 +172,48 @@ export const Footer = (props) => {
           <Column>
             <ul>
               <li>
-                <a>
-                  <FacebookCircle size={48} color={props.colors.primary} />
+                <a
+                  href="https://www.facebook.com/DP-Pool-Service-104474771264707/?modal=admin_todo_tour"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <StyledFacebookCircle
+                    size={48}
+                    color={props.colors.primary}
+                  />
                 </a>
               </li>
               <li>
-                <a>
-                  <Twitter size={48} color={props.colors.primary} />
+                <a
+                  href="https://twitter.com/dppoolserv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <StyledTwitter size={48} color={props.colors.primary} />
                 </a>
               </li>
               <li>
-                <a>
-                  <GooglePlusCircle size={48} color={props.colors.primary} />
+                <a
+                  href="https://plus.google.com/me"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <StyledGooglePlusCircle
+                    size={48}
+                    color={props.colors.primary}
+                  />
                 </a>
               </li>
               <li>
-                <a>
-                  <LinkedinSquare size={48} color={props.colors.primary} />
+                <a
+                  href="https://www.linkedin.com/in/dp-pool-5543881a9/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <StyledLinkedinSquare
+                    size={48}
+                    color={props.colors.primary}
+                  />
                 </a>
               </li>
             </ul>
@@ -175,12 +222,12 @@ export const Footer = (props) => {
         <LegalFooter>
           <Column>
             <ul>
-              <li>
+              {/* <li>
                 <a>Terms & Conditions</a>
               </li>
               <li>
                 <a>Privacy Policy</a>
-              </li>
+              </li> */}
               <li>&copy; 2020 Copyright DP Pools</li>
             </ul>
           </Column>

@@ -170,14 +170,17 @@ const Index = (props) => {
             background='url("assets/images/blue-wave-2.png") no-repeat left bottom/cover'
             gridArea="repair"
             title="Expert Pool Repair"
-            subtitle="We strive to make your pool a safe place. Our number one priority is to make your pool a safe zone for all visitors. We will repair and/or replace any damaged areas or parts."
+            subtitle="Our licensed technicians can diagnose, upgrade, and repair your pool equipment.  This includes:"
             features={[
-              "Pool Plastering",
-              "Pool Caulking",
-              "Tile Refinishing",
-              "Deck Sealing",
+              "Chlorinators",
+              "Displays",
+              "Filters",
+              "Heaters",
+              "Motors",
+              "Timers",
+              "Valves",
             ]}
-            img="assets/images/337387834.jpg"
+            img="assets/images/305185702.jpg"
             /* animate={show.itemOne} */
             // ref={ourRef}
           />
