@@ -6,6 +6,7 @@ export const Textarea = styled.textarea`
   background: ${lighten(0.1, "lightgray")};
   display: block;
   height: ${(props) => props.height || "100vh"};
+  margin: ${(props) => props.margin};
   padding: ${(props) => props.padding || "1rem"};
   width: 100%;
 `

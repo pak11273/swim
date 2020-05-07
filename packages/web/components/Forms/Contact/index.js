@@ -7,7 +7,6 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 100vh;
   padding: 20px;
   margin: 100px 5%;
   width: ${(props) => props.width || "100%"};
@@ -150,6 +149,7 @@ export const ContactForm = () => {
         <Textarea
           onChange={(e) => onChange(e)}
           height="300px"
+          margin="0 0 100px 0"
           name="message"
           type="text"
           value={state.message || ""}
