@@ -7,6 +7,7 @@ const StyledBtn = styled.button`
   cursor: pointer;
   color: ${(props) =>
     props.active ? props.theme.colors.secondary : props.theme.colors.primary};
+  font-weight: ${(props) => props.fontWeight};
   height: ${(props) => props.height || "16px"};
 
   text-align: center;

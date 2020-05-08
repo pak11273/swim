@@ -107,6 +107,7 @@ export const NavBar = (props) => {
               let active = router.pathname === link.href
               return (
                 <NavBtn
+                  fontWeight="600"
                   key={i}
                   href={link.href}
                   {...router}
