@@ -1,6 +1,5 @@
 import {
   Accolades,
-  AdditonalServices,
   Feature,
   Grid,
   Layout,
@@ -119,15 +118,7 @@ const Index = (props) => {
     <Layout title="DP Pool Service" {...props}>
       <div id="container">
         <Grid
-          areas={[
-            "masthead",
-            "cleaning",
-            "maintenance",
-            "repair",
-            "additional",
-            "div3",
-            "accolades",
-          ]}
+          areas={["masthead", "cleaning", "maintenance", "repair", "accolades"]}
         >
           <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
           <MastheadIndex
@@ -182,12 +173,6 @@ const Index = (props) => {
             img="assets/images/305185702.jpg"
             /* animate={show.itemOne} */
             // ref={ourRef}
-          />
-          <AdditonalServices
-            gridArea="additional"
-            // animate={show.itemThree}
-            // ref={refThree}
-            {...props}
           />
           <Accolades
             gridArea="accolades"

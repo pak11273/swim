@@ -5,6 +5,7 @@ import {
   Grid,
   Layout,
   MastheadServices,
+  RiderCircle,
   ScrollTop,
 } from "components"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
@@ -21,6 +22,23 @@ const Div = styled.div`
 /* i'm using destructuring on the prop above */
 /* adding a conventional CSS class could look something like this:
 <div ref={ourRef} className={`defaultClass${show.itemOne ? " addedClass" : ""}`} /> */
+const StyledRiderCircle = styled(RiderCircle)`
+  background: yellow;
+`
+
+const Sale = styled.div`
+  background: transparent;
+  color: blue;
+  margin: 45px auto;
+  padding-left: -24px;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  span {
+    background: transparent;
+    font-size: 2.5rem;
+  }
+`
 
 const Services = (props) => {
   const [show, doShow] = useState({
@@ -122,27 +140,40 @@ const Services = (props) => {
           <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
           <MastheadServices
             gridArea="masthead"
-            background='white url("assets/images/patric-wong-iIn9RMIlay8-unsplash.jpg") center/cover'
+            background='white url("assets/images/michael-monahan-n2YxstZulPo-unsplash.jpg") center/cover'
           >
             <FeatureServices
-              title="Premier"
-              subtitle="Our cleaning services come with impeccable quality. We ensure your pool has a fresh clean look every visit."
+              colorh5="white"
+              title="Standard Package"
               features={[
-                "Pool Vacuuming",
-                "Pool Skimming",
-                "Tile Brushing",
-                "Deck Spraying",
+                "Check and maintain pool chemistry",
+                "Check filters and pool equipment",
+                "Remove all debris from skimmer baskets",
+                "Remove all debris from pump baskets",
+                "Backwash the filter",
+                "Brush all walls and steps",
+                "Net pool debris",
               ]}
             />
             <FeatureServices
-              title="Standard"
-              subtitle="Our maintenance comes with the highest industry standards"
-              features={[
-                "Chemical balancing",
-                "Thorough equipment check",
-                "Expert recommendations",
-              ]}
-            />
+              colorh5="white"
+              fontSizeh2_sm="2.4rem"
+              lineHeighth2="3rem"
+              paddingh2="4.5rem 1rem"
+              title="Premier Package"
+              subtitle="Comes with everything in the Standard Package plus vacuuming your whole pool!"
+            >
+              <StyledRiderCircle
+                bottom="-20px"
+                right="-20px"
+                height="150px"
+                width="150px"
+              >
+                <Sale>
+                  Summer <span>Sale!</span>
+                </Sale>
+              </StyledRiderCircle>
+            </FeatureServices>
           </MastheadServices>
           <AdditonalServices
             gridArea="additional"

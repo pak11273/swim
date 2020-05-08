@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     outline: none;
     padding: 0;
-    background-color: ${(props) => props.theme.colors.white};
+    background: ${(props) => props.backgroundColor || "transparent"};
     font-size: 16px;
     /* font-family: 'Oxygen', sans-serif; */
     font-family: 'Jose fin', sans-serif;

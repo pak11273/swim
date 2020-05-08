@@ -18,7 +18,7 @@ export const Layout = (props) => {
         <title>{props.title || ""}</title>
       </Head>
       <NavBar id="navbar" gridArea="navbar" {...props} />
-      <Gap margin="0px" />
+      <Gap padding="43px" />
       {props.children}
       <Footer {...props} gridArea="footer" />
     </div>

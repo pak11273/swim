@@ -6,14 +6,18 @@ const StyledMasthead = styled((props) => <Section {...props} />)`
   background: lightcoral;
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
-  justify-content: center;
+  justify-content: space-evenly;
   overflow: hidden;
-  padding: 0 15px;
+  padding: 100px 15px;
 `
 
 export const MastheadServices = (props) => (
-  <StyledMasthead gridArea="masthead" {...props} flexDirection="row">
+  <StyledMasthead
+    gridArea="masthead"
+    {...props}
+    flexDirection="row"
+    justifyContent="space-evenly"
+  >
     {props.children}
   </StyledMasthead>
 )

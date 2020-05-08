@@ -5,22 +5,32 @@ import styled from "styled-components"
 
 // const StyledSection = styled((props) => <Section {...props} />)`
 const StyledSection = styled.div`
-  background: ${(props) => props.background || "lightcoral"};
+  align-items: baseline;
+  background: ${(props) => props.background || "white"};
+  border-radius: 10px;
+  box-shadow: 0 5px 10px gray;
+  display: flex;
+  justify-content: center;
+  min-height: 600px;
+  margin: 20px;
   position: relative;
-  padding: 0;
+  padding: 20px;
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   justify-content: center;
   color: black;
   ${({ theme }) => theme.mq.md`
+    height: 600px;
     `}
   > div:first-child {
     background: white;
+    text-align: center;
     > div {
-      justify-content: flex-start;
+      justify-content: center;
       hr {
-        text-align: left;
-        margin: 1rem 0;
+        background: white;
+        margin: 30px auto;
+        text-align: center;
       }
       > div:first-child {
         padding: 0;
@@ -31,13 +41,18 @@ const StyledSection = styled.div`
       h5 {
         font-size: 2.2rem;
         line-height: 2rem;
-        color: ${(props) => props.theme.colors.primary || "black"};
+        color: ${(props) => props.colorh5 || props.theme.colors.primary};
       }
       h2 {
         color: ${(props) =>
-          lighten(0.1, props.theme.colors.primary) || "black"};
+          props.colorh2 || lighten(0.1, props.theme.colors.primary)};
         font-size: 1.2rem;
+        ${(props) => props.theme.mq.sm`
+          font-size: ${(props) => props.fontSizeh2_sm};
+        `}
         line-height: 1.5rem;
+        line-height: ${(props) => props.lineHeighth2};
+        padding: ${(props) => props.paddingh2};
         text-transform: none;
       }
       h6 {
@@ -49,6 +64,7 @@ const StyledSection = styled.div`
       ul {
         margin-top: 40px;
         margin-left: 20px;
+        text-align: left;
       }
       li {
         margin: 20px 0;
@@ -70,10 +86,10 @@ export const FeatureServices = (props) => {
   return (
     <StyledSection {...props}>
       <Flex>
-        <Flex>
+        <Flex flexDirection="column" background="red">
           <h5>{props.title}</h5>
+          <Line width="15%" />
         </Flex>
-        <Line />
         <Flex>
           <h2>{props.subtitle}</h2>
           <ul>
@@ -86,6 +102,7 @@ export const FeatureServices = (props) => {
           </ul>
         </Flex>
       </Flex>
+      {props.children}
     </StyledSection>
   )
 }

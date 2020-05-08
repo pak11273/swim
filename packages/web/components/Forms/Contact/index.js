@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { useState } from "react"
 
 const StyledForm = styled.form`
+  background: white;
   display: flex;
   flex-direction: column;
   position: relative;
