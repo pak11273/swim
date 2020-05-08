@@ -23,10 +23,6 @@ export const StyledFooter = styled.section`
 
 const MainFooter = styled.section`
   display: flex;
-  color: ${(props) => props.color || "white"};
-  li {
-    color: ${(props) => props.color || "white"};
-  }
   p {
     color: ${(props) => props.color || "white"};
   }

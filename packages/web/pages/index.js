@@ -5,6 +5,7 @@ import {
   Layout,
   MastheadIndex,
   ScrollTop,
+  Section,
 } from "components"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
 
@@ -118,7 +119,15 @@ const Index = (props) => {
     <Layout title="DP Pool Service" {...props}>
       <div id="container">
         <Grid
-          areas={["masthead", "cleaning", "maintenance", "repair", "accolades"]}
+          areas={[
+            "masthead",
+            "cleaning",
+            "about",
+            "maintenance",
+            "mission",
+            "repair",
+            "accolades",
+          ]}
         >
           <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
           <MastheadIndex
@@ -141,6 +150,19 @@ const Index = (props) => {
             /* animate={show.itemOne} */
             /* ref={ourRef} */
           />
+          <Section gridArea="mission">
+            <h6>Service and Maintenance</h6>
+            <p>Our team keeps your pool chemically balanced.</p>
+            <p>
+              With proper maintenance it keeps your pool equipment running
+              properly
+            </p>
+            <h6>Repair</h6>
+            <p>
+              Our technicians will diagnose, repair, replace, and upgrade
+              equipment.
+            </p>
+          </Section>
           <Feature
             reverse
             background='url("assets/images/blue-wave-1.png") no-repeat left bottom/cover'
@@ -156,6 +178,17 @@ const Index = (props) => {
             /* animate={show.itemOne} */
             /* ref={ourRef} */
           />
+          <Section gridArea="about">
+            <h6>About us</h6>
+            <p>
+              DP Pool Service is a service and pool equipment repair company. We
+              focus serving the North Texas area which includes Frisco, Plano,
+              The Colony, Allen, McKinney, Prosper, and surrounding areas. Our
+              mission is to operate in an ethical manner, to educate and provide
+              a professional level of service which includes direct level of
+              communication.
+            </p>
+          </Section>
           <Feature
             background='url("assets/images/blue-wave-2.png") no-repeat left bottom/cover'
             gridArea="repair"
