@@ -170,6 +170,7 @@ const Services = (props) => {
                 color="white"
                 fontSize="2rem"
                 lineHeight="2rem"
+                textAlign="center"
               >
                 You invested in a swimming pool to relax not work more. Let us
                 maintain your pool so you can relax and enjoy it.

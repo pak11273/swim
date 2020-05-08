@@ -65,8 +65,8 @@ export const ContactForm = () => {
       message: state.message,
     }
 
-    // let url = "https://swim-api.pak11273.now.sh/api/contact"
-    let url = "http://localhost:5000/api/contact"
+    let url = "https://swim-api.pak11273.now.sh/api/contact"
+    // let url = "http://localhost:5000/api/contact"
 
     const res = await fetch(url, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -93,7 +93,7 @@ export const ContactForm = () => {
 
   return (
     <StyledForm onSubmit={async (e) => await formSubmit(e)}>
-      <Flex>
+      <Flex justifyContent="flex-start">
         <Label name="name" htmlFor="name">
           Name
         </Label>
@@ -131,7 +131,7 @@ export const ContactForm = () => {
           />
         </StyledFlex>
       </Flex>
-      <Flex>
+      <Flex justifyContent="flex-start">
         <Label name="subject" htmlFor="subject">
           Subject
         </Label>
@@ -143,7 +143,7 @@ export const ContactForm = () => {
           required
         />
       </Flex>
-      <Flex>
+      <Flex justifyContent="flex-start">
         <Label name="message" htmlFor="message">
           Your Message
         </Label>

@@ -7,5 +7,6 @@ export const Text = styled.p`
   padding: ${(props) => props.padding};
   line-height: ${(props) => props.lineHeight};
   font-size: ${(props) => props.fontSize};
+  text-align: ${(props) => props.textAlign};
   max-width: ${(props) => props.maxWidth};
 `
