@@ -8,6 +8,9 @@ export const Section = styled.div`
   flex-direction: ${(props) => props.flexDirection || "column"};
   justify-content: ${(props) => props.justifyContent || "center"};
   padding: ${(props) => props.padding};
+  ${(props) => props.theme.mq.md`
+    padding: ${(props) => props.padding_md};
+  `}
   max-height: ${(props) => props.maxHeight};
   width: 100%;
   max-width: ${(props) => props.maxWidth};

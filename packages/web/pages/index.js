@@ -164,7 +164,7 @@ const Index = (props) => {
             /* animate={show.itemOne} */
             /* ref={ourRef} */
           />
-          <Infosection gridArea="work1" padding="200px 20px">
+          <Infosection gridArea="work1" padding_md="200px 20px">
             <h6>Maintain your equpiment</h6>
             <Line />
             <p>
@@ -190,7 +190,11 @@ const Index = (props) => {
             /* animate={show.itemOne} */
             /* ref={ourRef} */
           />
-          <Infosection gridArea="work2" padding="200px 20px">
+          <Infosection
+            gridArea="work2"
+            padding_md="200px 20px"
+            bottombtn="-140px"
+          >
             <h6>Licensed Technicians</h6>
             <Line />
             <p>
@@ -217,7 +221,7 @@ const Index = (props) => {
             /* animate={show.itemOne} */
             // ref={ourRef}
           />
-          <Infosection gridArea="coa" padding="200px 20px">
+          <Infosection gridArea="coa" padding_md="200px 20px">
             <h6>Get scheduled Today</h6>
             <Line />
             <p>

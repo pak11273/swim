@@ -29,7 +29,6 @@ const StyledSection = styled((props) => <Section {...props} />)`
     font-size: 1.4rem;
     line-height: 2rem;
   }
-  padding: 0;
   width: 100%;
 `
 

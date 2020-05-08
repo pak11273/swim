@@ -97,11 +97,11 @@ export const Feature = (props) => {
     <StyledSection {...props}>
       <Wrapper background="black" alignItems="flex-start" padding="70px">
         <Flex position="relative" margin={props.button && "0 0 70px 0"}>
-          <Flex>
+          <Flex justifyContent="flex-start">
             <h5>{props.title}</h5>
           </Flex>
           <Line />
-          <Flex margin="0 0 20px 0">
+          <Flex margin="0 0 20px 0" justifyContent="flex-start">
             <h2>{props.subtitle}</h2>
             <ul>
               {props.features &&

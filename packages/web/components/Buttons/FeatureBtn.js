@@ -6,21 +6,27 @@ const StyledBtn = styled.button`
   border-radius: 5px;
   cursor: pointer;
   display: block;
+  padding: ${(props) => props.padding || ".8rem 1.8rem"};
   &:hover {
     background: ${(props) => props.theme.colors.secondary};
   }
-  padding: ${(props) => props.padding || ".8rem 1.8rem"};
   a {
     color: white;
     font-size: ${(props) => props.fontSize || "1.5rem"};
     text-transform: uppercase;
     text-decoration: none;
   }
-  position: ${(props) => props.position || "absolute"};
-  bottom: -40px;
-  left: ${(props) => props.left || "18px"};
+  position: relative;
+  margin: 20px auto;
   height: 53px;
   min-width: 109px;
+  ${(props) => props.theme.mq.sm`
+    margin: 0 auto 80px;
+    position: ${(props) => props.position || "absolute"};
+    bottom: -40px;
+    bottom: ${(props) => props.bottombtn};
+    left: ${(props) => props.left || "18px"};
+  `}
 `
 
 export const FeatureBtn = (props) => (
