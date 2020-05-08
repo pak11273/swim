@@ -7,7 +7,7 @@ const StyledAccolades = styled((props) => <Section {...props} />)`
   flex-direction: row;
   justify-content: space-evenly;
   height: 120px;
-  background: ${({ theme }) => lighten(0.4, theme.colors.primary)};
+  background: ${({ theme }) => lighten(0.7, theme.colors.primary)};
   img {
     background: transparent;
     height: 20px;
