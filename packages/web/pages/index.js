@@ -135,17 +135,15 @@ const Index = (props) => {
             background='white url("assets/images/patric-wong-iIn9RMIlay8-unsplash.jpg") center/cover'
           />
           <Feature
+            button
+            link="Services"
+            url="/services"
             id="services"
             background='url("assets/images/blue-wave-2.png") no-repeat right top/cover'
             gridArea="cleaning"
             title="Pristine Pools"
             subtitle="Our cleaning services come with impeccable quality. We ensure your pool has a fresh clean look every visit."
-            features={[
-              "Pool Vacuuming",
-              "Pool Skimming",
-              "Tile Brushing",
-              "Deck Spraying",
-            ]}
+            features={["Pool Vacuuming", "Pool Skimming", "Tile Brushing"]}
             img="assets/images/286975408.jpg"
             /* animate={show.itemOne} */
             /* ref={ourRef} */

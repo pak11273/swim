@@ -6,7 +6,9 @@ export const Flex = styled.div`
   flex-direction: ${(props) => props.flexDirection || "row"};
   flex-wrap: wrap;
   align-items: ${(props) => props.alignItems || "center"};
+  margin: ${(props) => props.margin};
   padding: ${(props) => props.padding || "14px"};
+  position: ${(props) => props.position};
   width: ${(props) => props.width || "100%"};
   min-width: ${(props) => props.minWidth};
 `

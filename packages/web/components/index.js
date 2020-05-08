@@ -1,6 +1,7 @@
 export * from "./Analytics"
 export * from "./Box"
 export * from "./Buttons/Contact"
+export * from "./Buttons/FeatureBtn"
 export * from "./Forms/Contact"
 export * from "./NavBar"
 export * from "./Pages/index/Accolades"

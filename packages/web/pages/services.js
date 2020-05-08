@@ -1,6 +1,5 @@
 import {
   AdditonalServices,
-  Feature,
   FeatureServices,
   Grid,
   Layout,

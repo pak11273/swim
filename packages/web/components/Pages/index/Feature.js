@@ -1,4 +1,4 @@
-import { Box, Flex, Line, Section, Wrapper } from "components"
+import { Box, FeatureBtn, Flex, Line, Section, Wrapper } from "components"
 
 import { lighten } from "polished"
 import styled from "styled-components"
@@ -16,7 +16,6 @@ const StyledSection = styled((props) => <Section {...props} />)`
   > div {
     z-index: 2;
     padding: 20px;
-    box-shadow: 0 10px 10px gray;
     border-radius: 5px;
     color: black;
     background: transparent;
@@ -24,10 +23,14 @@ const StyledSection = styled((props) => <Section {...props} />)`
     flex-direction: column-reverse;
     ${({ theme }) => theme.mq.md`
       flex-direction: ${(props) => (props.reverse ? "row-reverse" : "row")};
+      box-shadow: 0 0 5px gray;
     `}
   }
   > div:first-child {
     background: white;
+    ${({ theme }) => theme.mq.md`
+      padding: 90px;
+    `}
     > div {
       justify-content: flex-start;
       hr {
@@ -92,13 +95,13 @@ const StyledSection = styled((props) => <Section {...props} />)`
 export const Feature = (props) => {
   return (
     <StyledSection {...props}>
-      <Wrapper>
-        <Flex>
+      <Wrapper background="black" alignItems="flex-start" padding="70px">
+        <Flex position="relative" margin="0 0 70px 0">
           <Flex>
             <h5>{props.title}</h5>
           </Flex>
           <Line />
-          <Flex>
+          <Flex margin="0 0 20px 0">
             <h2>{props.subtitle}</h2>
             <ul>
               {props.features &&
@@ -109,6 +112,7 @@ export const Feature = (props) => {
                 ))}
             </ul>
           </Flex>
+          {/* {props.button ? <FeatureBtn {...props}>Services</FeatureBtn> : null} */}
         </Flex>
         <Flex>
           <Box>
