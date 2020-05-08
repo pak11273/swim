@@ -31,15 +31,11 @@ const Contact = (props) => (
           maxWidth="1240px"
           flexDirection="column"
         >
-          <h4 style={{ textShadow: "0 10px 10px black" }}>Have Questions?</h4>
-          <h6
-            style={{ textTransform: "none", textShadow: "0 10px 10px black" }}
-          >
+          <h4 style={{ textShadow: "0 5px 5px gray" }}>Have Questions?</h4>
+          <h6 style={{ textTransform: "none", textShadow: "0 5px 5px gray" }}>
             Give us a call
           </h6>
-          <h6
-            style={{ textTransform: "none", textShadow: "0 10px 10px black" }}
-          >
+          <h6 style={{ textTransform: "none", textShadow: "0 5px 5px gray" }}>
             or send a message below
           </h6>
         </Wrapper>

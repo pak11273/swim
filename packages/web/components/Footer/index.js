@@ -7,10 +7,12 @@ import { LinkedinSquare } from "@styled-icons/boxicons-logos/LinkedinSquare"
 import { Mail } from "@styled-icons/entypo/Mail"
 import { OldPhone } from "@styled-icons/entypo/OldPhone"
 import { Twitter } from "@styled-icons/boxicons-logos/Twitter"
+import { lighten } from "polished"
 import styled from "styled-components"
 
 export const StyledFooter = styled.section`
   align-items: center;
+  background: ${(props) => lighten(0.65, props.theme.colors.primary)};
   display: flex;
   flex-direction: column;
   height: 100%;
