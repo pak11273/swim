@@ -5,7 +5,7 @@ import styled from "styled-components"
 const StyledBox = styled(Box)`
   display: none;
   position: absolute;
-  bottom: 33px;
+  bottom: -57px;
   right: 20%;
   img {
     height: 700px;
@@ -42,7 +42,7 @@ const StyledMasthead = styled((props) => <Section {...props} />)`
     font-size: 2rem;
     font-family: "Oxygen", arial;
     color: ${(props) => props.theme.colors.highlight};
-    text-shadow: 0 5px 5px black;
+    text-shadow: 0 4px 8px darkgray;
     line-height: 2rem;
     margin-top: 7rem;
   }
@@ -64,8 +64,8 @@ export const MastheadIndex = (props) => (
   <StyledMasthead gridArea="masthead" {...props}>
     <Box>
       <h3>FREE ESTIMATES</h3>
-      <h2 style={{ textShadow: "0 10px 10px black" }}>DP Pool Service</h2>
-      <h4 style={{ textTransform: "none", textShadow: "0 10px 10px black" }}>
+      <h2 style={{ textShadow: "0 4px 8px darkgray" }}>DP Pool Service</h2>
+      <h4 style={{ textTransform: "none", textShadow: "0 4px 8px darkgray" }}>
         Enjoying your pool?
       </h4>
       <h6>Dallas/FtWorth</h6>

@@ -32,7 +32,7 @@ const StyledGridArea = styled((props) => <GridArea {...props} />)`
   position: fixed;
   width: 100%;
   box-shadow: ${(props) =>
-    props.shadow === "true" ? "0 4px 8px black" : "none"};
+    props.shadow === "true" ? "0 4px 8px gray" : "none"};
   z-index: 10;
 `
 const links = [
@@ -50,10 +50,14 @@ const StyledFlex = styled.div`
   }
 `
 
-export const StyledText = styled.p`
+export const StyledText = styled.div`
   display: none;
-  color: ${(props) => props.color};
-  font-size: ${(props) => props.fontSize};
+  a {
+    color: ${(props) => props.color};
+    font-size: ${(props) => props.fontSize};
+  }
+  font-weight: 600;
+  margin-top: 2px;
   ${(props) => props.theme.mq.sm`
    display: block;
  `}
@@ -98,8 +102,8 @@ export const NavBar = (props) => {
         <StyledFlex ref={node}>
           <Flex width="334px">
             <StyledPhone size={18} md-display="none" />
-            <StyledText fontSize="1.3rem" color={`${props.colors.primary}`}>
-              903.487.8090
+            <StyledText fontSize="1.2rem" color={`${props.colors.primary}`}>
+              <a href="tel:+19038675309">903.867.5309</a>
             </StyledText>
           </Flex>
           <StyledBox padding="0 1rem 0 0">

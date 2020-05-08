@@ -12,7 +12,7 @@ import styled from "styled-components"
 
 export const StyledFooter = styled.section`
   align-items: center;
-  background: ${(props) => lighten(0.65, props.theme.colors.primary)};
+  background: ${(props) => props.theme.colors.primary};
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -23,6 +23,13 @@ export const StyledFooter = styled.section`
 
 const MainFooter = styled.section`
   display: flex;
+  color: ${(props) => props.color || "white"};
+  li {
+    color: ${(props) => props.color || "white"};
+  }
+  p {
+    color: ${(props) => props.color || "white"};
+  }
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 6rem 0 0 0;
@@ -72,6 +79,7 @@ const LegalFooter = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   li {
+    color: ${(props) => props.color || "white"};
     padding: 1rem;
     display: inline-block;
   }
@@ -80,7 +88,7 @@ const LegalFooter = styled.section`
 `
 
 const Title = styled.h1`
-  color: ${(props) => props.theme.colors.primary || "black"};
+  color: ${(props) => props.color || "white"};
   font-size: 2rem;
   line-height: 1rem;
 `
@@ -99,16 +107,16 @@ const Column = styled.div`
 `
 
 const StyledAddress = styled(Address)`
-  color: ${(props) => props.colors.primary};
+  color: ${(props) => props.color || "white"};
   padding: 12px 8px 0 0;
 `
 
 const StyledOldPhone = styled(OldPhone)`
-  color: ${(props) => props.colors.primary};
+  color: ${(props) => props.color || "white"};
   padding: 12px 8px 0 0;
 `
 const StyledMail = styled(Mail)`
-  color: ${(props) => props.colors.primary};
+  color: ${(props) => props.color || "white"};
   padding: 12px 8px 0 0;
 `
 
@@ -179,10 +187,7 @@ export const Footer = (props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <StyledFacebookCircle
-                    size={48}
-                    color={props.colors.primary}
-                  />
+                  <StyledFacebookCircle size={48} color="white" />
                 </a>
               </li>
               <li>
@@ -191,7 +196,7 @@ export const Footer = (props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <StyledTwitter size={48} color={props.colors.primary} />
+                  <StyledTwitter size={48} color="white" />
                 </a>
               </li>
               <li>
@@ -200,10 +205,7 @@ export const Footer = (props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <StyledGooglePlusCircle
-                    size={48}
-                    color={props.colors.primary}
-                  />
+                  <StyledGooglePlusCircle size={48} color="white" />
                 </a>
               </li>
               <li>
@@ -212,10 +214,7 @@ export const Footer = (props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <StyledLinkedinSquare
-                    size={48}
-                    color={props.colors.primary}
-                  />
+                  <StyledLinkedinSquare size={48} color="white" />
                 </a>
               </li>
             </ul>
