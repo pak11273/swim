@@ -96,7 +96,7 @@ export const Feature = (props) => {
   return (
     <StyledSection {...props}>
       <Wrapper background="black" alignItems="flex-start" padding="70px">
-        <Flex position="relative" margin="0 0 70px 0">
+        <Flex position="relative" margin={props.button && "0 0 70px 0"}>
           <Flex>
             <h5>{props.title}</h5>
           </Flex>
@@ -112,7 +112,9 @@ export const Feature = (props) => {
                 ))}
             </ul>
           </Flex>
-          {/* {props.button ? <FeatureBtn {...props}>Services</FeatureBtn> : null} */}
+          {props.button ? (
+            <FeatureBtn link="/services">Services</FeatureBtn>
+          ) : null}
         </Flex>
         <Flex>
           <Box>

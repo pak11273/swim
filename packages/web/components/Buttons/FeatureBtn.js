@@ -25,8 +25,6 @@ const StyledBtn = styled.button`
 
 export const FeatureBtn = (props) => (
   <StyledBtn>
-    <Link href={props.link}>
-      <a>{props.children}</a>
-    </Link>
+    <a href={props.link}>{props.children}</a>
   </StyledBtn>
 )
