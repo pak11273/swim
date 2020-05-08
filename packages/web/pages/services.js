@@ -147,7 +147,7 @@ const Services = (props) => {
             gridArea="masthead"
             background='white url("assets/images/michael-monahan-n2YxstZulPo-unsplash.jpg") center/cover'
           >
-            <Flex padding="100px 20px">
+            <Flex padding="100px 20px" justifyContent="center">
               <Flex flexDirection="column">
                 <Text color="white" fontSize="2.5rem" lineHeight="2.5rem">
                   Call us at{" "}
