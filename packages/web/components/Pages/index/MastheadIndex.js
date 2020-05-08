@@ -24,7 +24,7 @@ const StyledBox = styled(Box)`
 `
 
 const StyledMasthead = styled((props) => <Section {...props} />)`
-  background: lightcoral;
+  background: lightgray;
   height: 900px;
   align-items: center;
   justify-content: center;
@@ -66,9 +66,9 @@ export const MastheadIndex = (props) => (
       <h3>FREE ESTIMATES</h3>
       <h2 style={{ textShadow: "0 4px 8px darkgray" }}>DP Pool Service</h2>
       <h4 style={{ textTransform: "none", textShadow: "0 4px 8px darkgray" }}>
-        Enjoying your pool?
+        Enjoy your pool
       </h4>
-      <h6>Dallas/FtWorth</h6>
+      <h6>North Texas Area</h6>
     </Box>
     <StyledBox>
       <img src="assets/images/stock-photo-car-mechanic-520750996.png" />

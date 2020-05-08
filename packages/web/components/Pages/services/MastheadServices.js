@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const StyledMasthead = styled((props) => <Section {...props} />)`
   align-items: center;
-  background: lightcoral;
+  background: lightgray;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

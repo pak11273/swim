@@ -4,7 +4,7 @@ import { lighten } from "polished"
 import styled from "styled-components"
 
 const StyledSection = styled((props) => <Section {...props} />)`
-  background: ${(props) => props.background || "lightcoral"};
+  background: ${(props) => props.background || "lightgray"};
   position: relative;
   padding: 0;
   width: 100%;

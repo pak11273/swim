@@ -16,15 +16,15 @@ const StyledBtn = styled.button`
     text-transform: uppercase;
     text-decoration: none;
   }
-  position: absolute;
+  position: ${(props) => props.position || "absolute"};
   bottom: -40px;
-  left: 18px;
+  left: ${(props) => props.left || "18px"};
   height: 53px;
   min-width: 109px;
 `
 
 export const FeatureBtn = (props) => (
-  <StyledBtn>
+  <StyledBtn {...props}>
     <a href={props.link}>{props.children}</a>
   </StyledBtn>
 )

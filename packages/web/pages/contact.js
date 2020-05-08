@@ -6,7 +6,7 @@ const StyledMasthead = styled(Section)`
   height: 900px;
   padding: 0 20px;
   overflow: hidden;
-  background: lightcoral
+  background: lightgray
     url("assets/images/darren-miller-F0MmnUS2fwc-unsplash.jpg") center/cover;
   grid-area: ${(props) => props.gridArea};
   align-items: center;

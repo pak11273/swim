@@ -1,14 +1,17 @@
 import {
   Accolades,
   Feature,
+  FeatureBtn,
   Grid,
+  Infosection,
   Layout,
+  Line,
   MastheadIndex,
   ScrollTop,
-  Section,
 } from "components"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
 
+import { Button } from "@swim/shared"
 import { lighten } from "polished"
 import styled from "styled-components"
 
@@ -121,11 +124,13 @@ const Index = (props) => {
         <Grid
           areas={[
             "masthead",
-            "cleaning",
-            "about",
-            "maintenance",
             "mission",
+            "cleaning",
+            "work1",
+            "maintenance",
+            "work2",
             "repair",
+            "coa",
             "accolades",
           ]}
         >
@@ -134,6 +139,17 @@ const Index = (props) => {
             gridArea="masthead"
             background='white url("assets/images/patric-wong-iIn9RMIlay8-unsplash.jpg") center/cover'
           />
+          <Infosection gridArea="mission" padding="200px 20px 60px 20px">
+            <h6>We are a pool service & pool equipment repair company</h6>
+            <Line />
+            <p>
+              We focus serving the North Texas area which includes <b>Frisco</b>
+              , <b>Plano</b>, <b>The Colony</b>, <b>Allen</b>, <b>McKinney</b>,
+              <b>Prosper</b>, and surrounding areas. Our mission is to operate
+              in an ethical manner, to educate and provide a professional level
+              of service which includes direct level of communication.
+            </p>
+          </Infosection>
           <Feature
             button
             link="Services"
@@ -148,45 +164,41 @@ const Index = (props) => {
             /* animate={show.itemOne} */
             /* ref={ourRef} */
           />
-          <Section gridArea="mission">
-            <h6>Service and Maintenance</h6>
-            <p>Our team keeps your pool chemically balanced.</p>
+          <Infosection gridArea="work1" padding="200px 20px">
+            <h6>Maintain your equpiment</h6>
+            <Line />
+            <p>
+              Our team keeps your pool <b>chemically balanced</b>.
+            </p>
             <p>
               With proper maintenance it keeps your pool equipment running
               properly
             </p>
-            <h6>Repair</h6>
-            <p>
-              Our technicians will diagnose, repair, replace, and upgrade
-              equipment.
-            </p>
-          </Section>
+          </Infosection>
           <Feature
             reverse
             background='url("assets/images/blue-wave-1.png") no-repeat left bottom/cover'
             gridArea="maintenance"
-            title="High Mainentance Standards"
+            title="Our Standards"
             subtitle="Our maintenance comes with the highest industry standards"
             features={[
               "Chemical balancing",
               "Thorough equipment check",
-              "Recommendations",
+              "Professional recommendations",
             ]}
             img="assets/images/high-standards.jpg"
             /* animate={show.itemOne} */
             /* ref={ourRef} */
           />
-          <Section gridArea="about">
-            <h6>About us</h6>
+          <Infosection gridArea="work2" padding="200px 20px">
+            <h6>Licensed Technicians</h6>
+            <Line />
             <p>
-              DP Pool Service is a service and pool equipment repair company. We
-              focus serving the North Texas area which includes Frisco, Plano,
-              The Colony, Allen, McKinney, Prosper, and surrounding areas. Our
-              mission is to operate in an ethical manner, to educate and provide
-              a professional level of service which includes direct level of
-              communication.
+              Our technicians will diagnose, repair, replace, and upgrade
+              equipment. Sloppy repairs can lead to more costs in the long run.
+              Get it right the first time with us.
             </p>
-          </Section>
+          </Infosection>
           <Feature
             background='url("assets/images/blue-wave-2.png") no-repeat left bottom/cover'
             gridArea="repair"
@@ -205,6 +217,18 @@ const Index = (props) => {
             /* animate={show.itemOne} */
             // ref={ourRef}
           />
+          <Infosection gridArea="coa" padding="200px 20px">
+            <h6>Get scheduled Today</h6>
+            <Line />
+            <p>
+              We offer 2 packages packed with all of your pool maintenance
+              needs. Come check out what we have to offer and get a <b>FREE</b>{" "}
+              quote!
+            </p>
+            <FeatureBtn position="relative" left="0" link="/services">
+              Get a quote
+            </FeatureBtn>
+          </Infosection>
           <Accolades
             gridArea="accolades"
             // animate={show.itemTwo}

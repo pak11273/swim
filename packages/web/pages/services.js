@@ -1,11 +1,13 @@
 import {
   AdditonalServices,
   FeatureServices,
+  Flex,
   Grid,
   Layout,
   MastheadServices,
   RiderCircle,
   ScrollTop,
+  Text,
 } from "components"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
 
@@ -28,14 +30,18 @@ const StyledRiderCircle = styled(RiderCircle)`
 const Sale = styled.div`
   background: transparent;
   color: blue;
-  margin: 45px auto;
+  margin: 25px auto;
   padding-left: -24px;
   font-size: 2rem;
   font-weight: 900;
   text-align: center;
+  p {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
   span {
     background: transparent;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 `
 
@@ -141,6 +147,34 @@ const Services = (props) => {
             gridArea="masthead"
             background='white url("assets/images/michael-monahan-n2YxstZulPo-unsplash.jpg") center/cover'
           >
+            <Flex padding="100px 20px">
+              <Flex flexDirection="column">
+                <Text color="white" fontSize="2.5rem" lineHeight="2.5rem">
+                  Call us at{" "}
+                  <span
+                    style={{
+                      color: props.colors.primary,
+                      fontSize: "3rem",
+                      fontWeight: "600",
+                    }}
+                  >
+                    903-867-5309
+                  </span>
+                </Text>
+                <Text color="white" fontSize="2rem" lineHeight="2rem">
+                  and get your FREE QUOTE!
+                </Text>
+              </Flex>
+              <Text
+                maxWidth="960px"
+                color="white"
+                fontSize="2rem"
+                lineHeight="2rem"
+              >
+                You invested in a swimming pool to relax not work more. Let us
+                maintain your pool so you can relax and enjoy it.
+              </Text>
+            </Flex>
             <FeatureServices
               colorh5="white"
               title="Standard Package"
@@ -169,7 +203,9 @@ const Services = (props) => {
                 width="150px"
               >
                 <Sale>
-                  Summer <span>Sale!</span>
+                  <p>New</p>
+                  <p>Clients</p>
+                  <span>Special!</span>
                 </Sale>
               </StyledRiderCircle>
             </FeatureServices>
