@@ -1,11 +1,11 @@
 var nodemailer = require("nodemailer")
+var micro = require("micro-cors")
+const cors = micro()
 
-module.exports = async (req, res) => {
-  //   res.setHeader("Access-Control-Allow-Origin", "*")
-  //   res.setHeader(
-  //     "Access-Control-Allow-Headers",
-  //     "Origin, X-Requested-With, Content-Type, Accept"
-  //   )
+function api(req, res) {
+  if (req.method === "OPTIONS") {
+    return res.status(200).end()
+  }
   var data = req.body
 
   // node-mailer
@@ -33,14 +33,10 @@ module.exports = async (req, res) => {
     if (error) {
       res.send(`ERROR: ${error}`)
     } else {
-      res.setHeader("Access-Control-Allow-Origin", "*")
-      //   res.setHeader(
-      //     "Access-Control-Allow-Headers",
-      //     "Origin, X-Requested-With, Content-Type, Accept"
-      //   )
-
       res.json({ email: "Success" })
     }
     smtpTransport.close()
   })
 }
+
+export default cors(api)
