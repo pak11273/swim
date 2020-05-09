@@ -1,5 +1,6 @@
 import { ContactBtn, Flex, Input, Label, Textarea } from "components"
 
+import axios from "axios"
 import styled from "styled-components"
 import { useState } from "react"
 
@@ -68,28 +69,39 @@ export const ContactForm = () => {
     let url = "https://swim-api.pak11273.now.sh/api/contact"
     // let url = "http://localhost:5000/api/contact"
 
-    const res = await fetch(url, {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: "follow", // manual, *follow, error
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    })
-      .then((response) => response.json())
-      .then((data) => {
+    axios
+      .post(url, data)
+      .then((res) => {
         changeState({ sent: true })
-        setTimeout(() => resetForm(), 2000)
       })
-      .catch((error) => {
-        console.error("Error:", error)
+      .finally(() => resetForm())
+      .catch(() => {
+        console.log("Message not sent")
       })
   }
+
+  //   const res = await fetch(url, {
+  //     method: "POST", // *GET, POST, PUT, DELETE, etc.
+  //   mode: "cors", // no-cors, *cors, same-origin
+  //     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+  //     credentials: "same-origin", // include, *same-origin, omit
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       // 'Content-Type': 'application/x-www-form-urlencoded',
+  //     },
+  //     redirect: "follow", // manual, *follow, error
+  //     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+  //     body: JSON.stringify(data), // body data type must match "Content-Type" header
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       changeState({ sent: true })
+  //       setTimeout(() => resetForm(), 2000)
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error)
+  //     })
+  // }
 
   return (
     <StyledForm onSubmit={async (e) => await formSubmit(e)}>
