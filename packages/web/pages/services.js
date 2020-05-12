@@ -138,6 +138,22 @@ const Services = (props) => {
     scrollTo(offset, null, 2000)
   }
 
+  const StyledNumber = styled(Text)`
+    color: white;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-align: center;
+    span {
+      color: ${({ theme }) => theme.colors.secondary};
+      display: block;
+      font-size: 3rem;
+      font-weight: 600;
+      line-height: 3rem;
+    }
+    ${({ theme }) => theme.mq.sm`
+        display: inline-block;
+    `}
+  `
   return (
     <Layout title="DP Pool Service" {...props}>
       <div id="container">
@@ -147,21 +163,22 @@ const Services = (props) => {
             gridArea="masthead"
             background='white url("assets/images/michael-monahan-n2YxstZulPo-unsplash.jpg") center/cover'
           >
-            <Flex padding="100px 20px">
+            <Flex
+              margin="100px 20px"
+              maxWidth="80%"
+              padding="100px 20px"
+              background="rgba(0,0,0,.5)"
+            >
               <Flex flexDirection="column">
-                <Text color="white" fontSize="2.5rem" lineHeight="2.5rem">
-                  Call us at{" "}
-                  <span
-                    style={{
-                      color: props.colors.primary,
-                      fontSize: "3rem",
-                      fontWeight: "600",
-                    }}
-                  >
-                    903-867-5309
-                  </span>
-                </Text>
-                <Text color="white" fontSize="2rem" lineHeight="2rem">
+                <StyledNumber>
+                  Call us at <span>903-867-5309</span>
+                </StyledNumber>
+                <Text
+                  margin="0 0 30px 0"
+                  color="white"
+                  fontSize="1.5rem"
+                  lineHeight="2rem"
+                >
                   and get your FREE QUOTE!
                 </Text>
               </Flex>
@@ -169,7 +186,7 @@ const Services = (props) => {
                 maxWidth="960px"
                 color="white"
                 fontSize="2rem"
-                lineHeight="2rem"
+                lineHeight="2.4rem"
                 textAlign="center"
               >
                 You invested in a swimming pool to relax not work more. Let us

@@ -11,5 +11,6 @@ export const Flex = styled.div`
   padding: ${(props) => props.padding || "14px"};
   position: ${(props) => props.position};
   width: ${(props) => props.width || "100%"};
+  max-width: ${(props) => props.maxWidth};
   min-width: ${(props) => props.minWidth};
 `
