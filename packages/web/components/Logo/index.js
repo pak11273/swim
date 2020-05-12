@@ -1,6 +1,7 @@
-import { Home4 } from "@styled-icons/remix-line/Home4"
 import Link from "next/link"
 import styled from "styled-components"
+
+// import { SVGLogo } from "/assets/images/logo_100x100.svg"
 
 const StyledLink = styled.a``
 
@@ -14,7 +15,7 @@ const StyledIcon = styled((props) => <Home4 {...props} />)`
 export const Logo = (props) => (
   <Link href={props.href} passHref>
     <StyledLink>
-      <StyledIcon size={48} {...props} />
+      <img src="/assets/images/logo_v2.svg" />
     </StyledLink>
   </Link>
 )

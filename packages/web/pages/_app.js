@@ -31,6 +31,7 @@ export default class MyApp extends App {
             href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap"
             rel="stylesheet"
           ></link>
+          <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
         <ThemeProvider theme={theme}>
           <GlobalStyle />

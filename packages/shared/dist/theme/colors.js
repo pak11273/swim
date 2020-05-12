@@ -7,7 +7,7 @@ exports.colors = {
     red: "#ff0000",
     green: "#00ff00",
     blue: "#0000ff",
-    primary: "#005075",
+    primary: "#0047A0",
     secondary: "#73ddc9",
     silver: "#c0c0c0",
     highlight: "#f3ed46",
