@@ -102,7 +102,7 @@ export const NavBar = (props) => {
         <StyledFlex ref={node}>
           <Flex width="334px">
             <StyledPhone size={18} md-display="none" />
-            <StyledText fontSize="1.2rem" color={`${props.colors.primary}`}>
+            <StyledText fontSize="1.1rem" color={`${props.colors.primary}`}>
               <a href="tel:+19038675309">903.867.5309</a>
             </StyledText>
           </Flex>
