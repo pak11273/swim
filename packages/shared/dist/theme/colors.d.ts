@@ -8,4 +8,5 @@ export declare const colors: {
     secondary: string;
     silver: string;
     highlight: string;
+    bg1: string;
 };

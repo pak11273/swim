@@ -9,4 +9,5 @@ export const colors = {
   secondary: "#73ddc9",
   silver: "#c0c0c0",
   highlight: "#f3ed46",
+  bg1: "#4a7983",
 }
