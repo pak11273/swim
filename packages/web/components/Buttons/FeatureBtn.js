@@ -23,7 +23,7 @@ const StyledBtn = styled.button`
   ${(props) => props.theme.mq.sm`
     margin: 0 auto 80px;
     position: ${(props) => props.position || "absolute"};
-    bottom: -40px;
+    bottom: -120px;
     bottom: ${(props) => props.bottombtn};
     left: ${(props) => props.left || "18px"};
   `}
