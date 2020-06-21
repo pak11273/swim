@@ -1,5 +1,4 @@
 import {
-  Accolades,
   Feature,
   FeatureBtn,
   Grid,
@@ -25,7 +24,7 @@ const Div = styled.div`
 /* adding a conventional CSS class could look something like this:
 <div ref={ourRef} className={`defaultClass${show.itemOne ? " addedClass" : ""}`} /> */
 
-const Index = (props) => {
+const Index = props => {
   const [show, doShow] = useState({
     itemOne: false,
     itemTwo: false,
@@ -137,7 +136,7 @@ const Index = (props) => {
           <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
           <MastheadIndex
             gridArea="masthead"
-            background='white url("assets/images/patric-wong-iIn9RMIlay8-unsplash.jpg") center/cover'
+            background='white url("assets/images/home_header.jpg") center/cover'
           />
           <Infosection gridArea="mission" padding="200px 20px 60px 20px">
             <h6>We are a pool service & pool equipment repair company</h6>
@@ -160,7 +159,7 @@ const Index = (props) => {
             title="Pristine Pools"
             subtitle="Our cleaning services come with impeccable quality. We ensure your pool has a fresh clean look every visit."
             features={["Pool Vacuuming", "Pool Skimming", "Tile Brushing"]}
-            img="assets/images/286975408.jpg"
+            img="assets/images/pristine_pool.jpg"
             /* animate={show.itemOne} */
             /* ref={ourRef} */
           />
@@ -186,7 +185,7 @@ const Index = (props) => {
               "Thorough equipment check",
               "Professional recommendations",
             ]}
-            img="assets/images/high-standards.jpg"
+            img="assets/images/chemical_balance.jpg"
             /* animate={show.itemOne} */
             /* ref={ourRef} */
           />
@@ -217,7 +216,7 @@ const Index = (props) => {
               "Timers",
               "Valves",
             ]}
-            img="assets/images/305185702.jpg"
+            img="assets/images/equipment_repair.jpg"
             /* animate={show.itemOne} */
             // ref={ourRef}
           />
@@ -233,12 +232,12 @@ const Index = (props) => {
               Get a quote
             </FeatureBtn>
           </Infosection>
-          <Accolades
+          {/* <Accolades
             gridArea="accolades"
             // animate={show.itemTwo}
             // ref={anotherRef}
             {...props}
-          />
+          /> */}
         </Grid>
       </div>
     </Layout>

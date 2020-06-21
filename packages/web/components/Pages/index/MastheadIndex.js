@@ -11,37 +11,37 @@ const StyledBox = styled(Box)`
     height: 700px;
     background: transparent;
   }
-  ${(props) => props.theme.mq.md`
+  ${props => props.theme.mq.md`
     right: 5%;
     display: block;
   `}
-  ${(props) => props.theme.mq.xl`
+  ${props => props.theme.mq.xl`
     right: 15%;
   `}
-  ${(props) => props.theme.mq.xxl`
+  ${props => props.theme.mq.xxl`
     right: 25%;
   `}
 `
 
-const StyledMasthead = styled((props) => <Section {...props} />)`
+const StyledMasthead = styled(props => <Section {...props} />)`
   background: lightgray;
   height: 900px;
   align-items: center;
   justify-content: center;
   padding: 0 15px;
   div:first-child {
-    ${(props) => props.theme.mq.md`
+    ${props => props.theme.mq.md`
       position: absolute;
       top: 220px;
       left: 10%;
     `}
-    ${(props) => props.theme.mq.lg`
+    ${props => props.theme.mq.lg`
       left: 30%;
     `}
   h3 {
     font-size: 2rem;
     font-family: "Oxygen", arial;
-    color: ${(props) => props.theme.colors.highlight};
+    color: ${props => props.theme.colors.highlight};
     text-shadow: 0 4px 8px darkgray;
     line-height: 2rem;
     margin-top: 7rem;
@@ -60,7 +60,7 @@ const StyledMasthead = styled((props) => <Section {...props} />)`
   }
 `
 
-export const MastheadIndex = (props) => (
+export const MastheadIndex = props => (
   <StyledMasthead gridArea="masthead" {...props}>
     <Box>
       <h3>FREE ESTIMATES</h3>
@@ -70,8 +70,8 @@ export const MastheadIndex = (props) => (
       </h4>
       <h6>North Texas Area</h6>
     </Box>
-    <StyledBox>
-      <img src="assets/images/stock-photo-car-mechanic-520750996.png" />
-    </StyledBox>
+    {/* <StyledBox>
+      <img src="assets/images/header_service_man.png" />
+    </StyledBox> */}
   </StyledMasthead>
 )

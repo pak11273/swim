@@ -18,21 +18,20 @@ import { useState } from "react"
 const StyledPhone = styled(Phone)`
   display: none;
   padding-right: 4px;
-  color: ${(props) => props.theme.colors.primary};
-  ${(props) => props.theme.mq.sm`
+  color: ${props => props.theme.colors.primary};
+  ${props => props.theme.mq.sm`
    display: block;
  `}
 `
 
-const StyledGridArea = styled((props) => <GridArea {...props} />)`
+const StyledGridArea = styled(props => <GridArea {...props} />)`
   align-items: center;
-  background: ${(props) => props.background || "white"};
+  background: ${props => props.background || "white"};
   justify-content: center;
   margin: 0 auto;
   position: fixed;
   width: 100%;
-  box-shadow: ${(props) =>
-    props.shadow === "true" ? "0 4px 8px gray" : "none"};
+  box-shadow: ${props => (props.shadow === "true" ? "0 4px 8px gray" : "none")};
   z-index: 10;
 `
 const links = [
@@ -41,7 +40,7 @@ const links = [
 ]
 
 const StyledFlex = styled.div`
-  padding: ${(props) => props.padding};
+  padding: ${props => props.padding};
   display: flex;
   max-width: 80px;
   width: 100%;
@@ -53,12 +52,12 @@ const StyledFlex = styled.div`
 export const StyledText = styled.div`
   display: none;
   a {
-    color: ${(props) => props.color};
-    font-size: ${(props) => props.fontSize};
+    color: ${props => props.color};
+    font-size: ${props => props.fontSize};
   }
   font-weight: 600;
   margin-top: 2px;
-  ${(props) => props.theme.mq.sm`
+  ${props => props.theme.mq.sm`
    display: block;
  `}
 `
@@ -75,7 +74,7 @@ const StyledBox = styled(Box)`
 
 const useOnClickOutside = (ref, handler) => {
   React.useEffect(() => {
-    const listener = (event) => {
+    const listener = event => {
       if (!ref.current || ref.current.contains(event.target)) {
         return
       }
@@ -89,7 +88,7 @@ const useOnClickOutside = (ref, handler) => {
   }, [ref, handler])
 }
 
-export const NavBar = (props) => {
+export const NavBar = props => {
   const [open, setOpen] = useState(false)
   const node = React.useRef()
   const router = useRouter()
@@ -103,7 +102,7 @@ export const NavBar = (props) => {
           <Flex width="334px">
             <StyledPhone size={18} md-display="none" />
             <StyledText fontSize="1.1rem" color={`${props.colors.primary}`}>
-              <a href="tel:+19038675309">903.867.5309</a>
+              <a href="tel:+19038675309">903.487.8090</a>
             </StyledText>
           </Flex>
           <StyledBox padding="0 1rem 0 0">

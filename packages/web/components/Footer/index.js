@@ -11,19 +11,19 @@ import styled from "styled-components"
 
 export const StyledFooter = styled.section`
   align-items: center;
-  background: ${(props) => props.theme.colors.primary};
+  background: ${props => props.theme.colors.primary};
   display: flex;
   flex-direction: column;
   height: 100%;
-  grid-area: ${(props) => props.gridArea || "footer"};
-  max-width: ${(props) => props.maxWidth || "none"};
+  grid-area: ${props => props.gridArea || "footer"};
+  max-width: ${props => props.maxWidth || "none"};
   width: 100%;
 `
 
 const MainFooter = styled.section`
   display: flex;
   p {
-    color: ${(props) => props.color || "white"};
+    color: ${props => props.color || "white"};
   }
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -50,22 +50,22 @@ const SocialFooter = styled.section`
 
 const StyledFacebookCircle = styled(FacebookCircle)`
   &:hover {
-    color: ${(props) => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.secondary};
   }
 `
 const StyledTwitter = styled(Twitter)`
   &:hover {
-    color: ${(props) => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.secondary};
   }
 `
 const StyledGooglePlusCircle = styled(GooglePlusCircle)`
   &:hover {
-    color: ${(props) => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.secondary};
   }
 `
 const StyledLinkedinSquare = styled(LinkedinSquare)`
   &:hover {
-    color: ${(props) => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.secondary};
   }
 `
 
@@ -74,7 +74,7 @@ const LegalFooter = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   li {
-    color: ${(props) => props.color || "white"};
+    color: ${props => props.color || "white"};
     padding: 1rem;
     display: inline-block;
   }
@@ -83,7 +83,7 @@ const LegalFooter = styled.section`
 `
 
 const Title = styled.h1`
-  color: ${(props) => props.color || "white"};
+  color: ${props => props.color || "white"};
   font-size: 2rem;
   line-height: 1rem;
 `
@@ -102,27 +102,27 @@ const Column = styled.div`
 `
 
 const StyledAddress = styled(Address)`
-  color: ${(props) => props.color || "white"};
+  color: ${props => props.color || "white"};
   padding: 12px 8px 0 0;
 `
 
 const StyledOldPhone = styled(OldPhone)`
-  color: ${(props) => props.color || "white"};
+  color: ${props => props.color || "white"};
   padding: 12px 8px 0 0;
 `
 const StyledMail = styled(Mail)`
-  color: ${(props) => props.color || "white"};
+  color: ${props => props.color || "white"};
   padding: 12px 8px 0 0;
 `
 
 // const StyledText = styled(Text)`
-const StyledText = styled((props) => <Text {...props} />)`
+const StyledText = styled(props => <Text {...props} />)`
   font-size: 1rem;
   line-height: 1.5rem;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${props => props.theme.colors.primary};
 `
 
-export const Footer = (props) => {
+export const Footer = props => {
   return (
     <StyledFooter {...props}>
       <Wrapper maxWidth="960px" flexDirection="column" {...props}>
@@ -133,10 +133,10 @@ export const Footer = (props) => {
               <Title>Address</Title>
               <ul>
                 <li>
-                  <StyledText>123 Swimming pool lane</StyledText>
+                  <StyledText>11206 Oliver Lane</StyledText>
                 </li>
                 <li>
-                  <StyledText>Fort Worth, TX 777777</StyledText>
+                  <StyledText>Frisco, TX 75035</StyledText>
                 </li>
               </ul>
             </div>
@@ -153,7 +153,7 @@ export const Footer = (props) => {
                   <StyledText>Mon-Fri 8:00am -</StyledText>
                 </li>
                 <li>
-                  <StyledText>8:00pm</StyledText>
+                  <StyledText>6:00pm</StyledText>
                 </li>
               </ul>
             </div>
@@ -164,7 +164,7 @@ export const Footer = (props) => {
               <Title>Mail</Title>
               <ul>
                 <li>
-                  <StyledText>support@dppoolserv@gmail.com</StyledText>
+                  <StyledText>support@dppoolservive.net</StyledText>
                 </li>
                 <li>
                   <StyledText>24x7 online support</StyledText>

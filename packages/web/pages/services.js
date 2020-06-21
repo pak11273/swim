@@ -45,7 +45,7 @@ const Sale = styled.div`
   }
 `
 
-const Services = (props) => {
+const Services = props => {
   const [show, doShow] = useState({
     itemOne: false,
     itemTwo: false,
@@ -171,7 +171,7 @@ const Services = (props) => {
             >
               <Flex flexDirection="column">
                 <StyledNumber>
-                  Call us at <span>903-867-5309</span>
+                  Call us at <span>903-487-8090</span>
                 </StyledNumber>
                 <Text
                   margin="0 0 30px 0"
@@ -189,8 +189,8 @@ const Services = (props) => {
                 lineHeight="2.4rem"
                 textAlign="center"
               >
-                You invested in a swimming pool to relax not work more. Let us
-                maintain your pool so you can relax and enjoy it.
+                You didn't invest in a pool to work more. Let us maintain your
+                pool so you can relax and enjoy it.
               </Text>
             </Flex>
             <FeatureServices
@@ -214,7 +214,7 @@ const Services = (props) => {
               title="Premier Package"
               subtitle="Comes with everything in the Standard Package plus vacuuming your whole pool!"
             >
-              <StyledRiderCircle
+              {/* <StyledRiderCircle
                 bottom="-20px"
                 right="-20px"
                 height="150px"
@@ -225,7 +225,7 @@ const Services = (props) => {
                   <p>Clients</p>
                   <span>Special!</span>
                 </Sale>
-              </StyledRiderCircle>
+              </StyledRiderCircle> */}
             </FeatureServices>
           </MastheadServices>
           <AdditonalServices
