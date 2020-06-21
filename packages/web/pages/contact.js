@@ -8,7 +8,7 @@ const StyledMasthead = styled(Section)`
   overflow: hidden;
   background: lightgray
     url("assets/images/darren-miller-F0MmnUS2fwc-unsplash.jpg") center/cover;
-  grid-area: ${(props) => props.gridArea};
+  grid-area: ${props => props.gridArea};
   align-items: center;
   justify-content: center;
   text-align: left;
@@ -16,13 +16,13 @@ const StyledMasthead = styled(Section)`
 const StyledMap = styled(Section)`
   height: 100%;
   padding: 20px;
-  ${(props) => props.theme.mq.sm`
+  ${props => props.theme.mq.sm`
     padding: 0 80px;
   `}
   background: url("assets/images/gray-map.jpg") center/cover;
   background-attachment: fixed;
 `
-const Contact = (props) => (
+const Contact = props => (
   <Layout title="DP PoolCare | Contact" {...props}>
     <Grid areas={["masthead", "map", "footer"]}>
       <StyledMasthead gridArea="masthead">
