@@ -10,8 +10,16 @@ function api(req, res) {
 
   // node-mailer
   var smtpTransport = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    // service: "Gmail",
+    // port: 465,
+    // auth: {
+    //   user: process.env.GMAIL_USERNAME, // "USERNAME"
+    //   pass: process.env.GMAIL_PASSWORD, // "PASSWORD"
+    // },
     service: "Gmail",
     port: 465,
+    secure: true,
     auth: {
       user: process.env.GMAIL_USERNAME, // "USERNAME"
       pass: process.env.GMAIL_PASSWORD, // "PASSWORD"
