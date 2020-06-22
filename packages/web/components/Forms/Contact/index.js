@@ -11,14 +11,14 @@ const StyledForm = styled.form`
   position: relative;
   padding: 20px;
   margin: 100px 5%;
-  width: ${(props) => props.width || "100%"};
+  width: ${props => props.width || "100%"};
   max-width: 1248px;
 `
 
 const StyledFlex = styled.div`
   padding: 14px;
   width: 100%;
-  ${(props) => props.theme.mq.sm`
+  ${props => props.theme.mq.sm`
     width: 50%;
   `}
 `
@@ -46,12 +46,12 @@ export const ContactForm = () => {
     })
   }
 
-  const onChange = (e) => {
+  const onChange = e => {
     e.preventDefault()
     changeState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const formSubmit = async (e) => {
+  const formSubmit = async e => {
     e.preventDefault()
 
     changeState({
@@ -66,12 +66,12 @@ export const ContactForm = () => {
       message: state.message,
     }
 
-    let url = "https://swim-api.pak11273.now.sh/api"
-    // let url = "http://localhost:5000/api/contact"
+    // let url = "https://swim-api.pak11273.now.sh/api"
+    let url = "http://localhost:5000/api/contact"
 
     axios
       .post(url, data)
-      .then((res) => {
+      .then(res => {
         changeState({ sent: true })
       })
       .finally(() => resetForm())
@@ -104,13 +104,13 @@ export const ContactForm = () => {
   // }
 
   return (
-    <StyledForm onSubmit={async (e) => await formSubmit(e)}>
+    <StyledForm onSubmit={async e => await formSubmit(e)}>
       <Flex justifyContent="flex-start">
         <Label name="name" htmlFor="name">
           Name
         </Label>
         <Input
-          onChange={(e) => onChange(e)}
+          onChange={e => onChange(e)}
           name="name"
           type="text"
           value={state.name || ""}
@@ -123,7 +123,7 @@ export const ContactForm = () => {
             Phone
           </Label>
           <Input
-            onChange={(e) => onChange(e)}
+            onChange={e => onChange(e)}
             name="phone"
             type="tel"
             value={state.phone || ""}
@@ -135,7 +135,7 @@ export const ContactForm = () => {
             Email Address
           </Label>
           <Input
-            onChange={(e) => onChange(e)}
+            onChange={e => onChange(e)}
             name="email"
             type="email"
             required
@@ -148,7 +148,7 @@ export const ContactForm = () => {
           Subject
         </Label>
         <Input
-          onChange={(e) => onChange(e)}
+          onChange={e => onChange(e)}
           name="subject"
           type="text"
           value={state.subject || ""}
@@ -160,7 +160,7 @@ export const ContactForm = () => {
           Your Message
         </Label>
         <Textarea
-          onChange={(e) => onChange(e)}
+          onChange={e => onChange(e)}
           height="300px"
           margin="0 0 100px 0"
           name="message"
