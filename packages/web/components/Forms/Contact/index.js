@@ -37,9 +37,9 @@ export const ContactForm = () => {
   const resetForm = () => {
     changeState({
       name: "",
-      phone: "",
+      // phone: "",
       message: "",
-      subject: "",
+      // subject: "",
       email: "",
       sent: false,
       buttonText: "Send",
@@ -53,72 +53,64 @@ export const ContactForm = () => {
 
   const formSubmit = async e => {
     e.preventDefault()
-
-    changeState({
-      buttonText: "...sending",
-    })
-
-    let data = {
-      name: state.name,
-      phone: state.phone,
-      subject: state.subject,
-      email: state.email,
-      message: state.message,
-    }
-
-    let url = "https://swim-api.pak11273.now.sh/api"
-    // let url = "http://localhost:5000/api/contact"
-
-    axios
-      .post(url, data)
-      .then(res => {
+    const form = e.target
+    const data = new FormData(form)
+    const xhr = new XMLHttpRequest()
+    xhr.open(form.method, form.action)
+    xhr.setRequestHeader("Accept", "application/json")
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return
+      xhr.onpgrogress = function () {
+        changeState({
+          buttonText: "...sending",
+        })
+      }
+      if (xhr.status === 200) {
+        form.reset()
         changeState({ sent: true })
-      })
-      .finally(() => resetForm())
-      .catch(() => {
-        console.log("Message not sent")
-      })
+        resetForm()
+      } else {
+        changeState({ sent: false })
+      }
+    }
+    xhr.send(data)
+    // OLD FORM
+    // e.preventDefault()
+
+    // changeState({
+    //   buttonText: "...sending",
+    // })
+
+    // let data = {
+    //   name: state.name,
+    //   phone: state.phone,
+    //   subject: state.subject,
+    //   email: state.email,
+    //   message: state.message,
+    // }
+
+    // let url = "https://swim-api.pak11273.now.sh/api"
+    // // let url = "http://localhost:5000/api/contact"
+
+    // axios
+    //   .post(url, data)
+    //   .then(res => {
+    //     changeState({ sent: true })
+    //   })
+    //   .finally(() => resetForm())
+    //   .catch(() => {
+    //     console.log("Message not sent")
+    //   })
   }
 
-  //   const res = await fetch(url, {
-  //     method: "POST", // *GET, POST, PUT, DELETE, etc.
-  //   mode: "cors", // no-cors, *cors, same-origin
-  //     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-  //     credentials: "same-origin", // include, *same-origin, omit
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       // 'Content-Type': 'application/x-www-form-urlencoded',
-  //     },
-  //     redirect: "follow", // manual, *follow, error
-  //     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-  //     body: JSON.stringify(data), // body data type must match "Content-Type" header
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       changeState({ sent: true })
-  //       setTimeout(() => resetForm(), 2000)
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error)
-  //     })
-  // }
-
   return (
-    <StyledForm onSubmit={async e => await formSubmit(e)}>
-      <Flex justifyContent="flex-start">
-        <Label name="name" htmlFor="name">
-          Name
-        </Label>
-        <Input
-          onChange={e => onChange(e)}
-          name="name"
-          type="text"
-          value={state.name || ""}
-          required
-        />
-      </Flex>
+    <StyledForm
+      onSubmit={async e => await formSubmit(e)}
+      action="https://formspree.io/xdowdyed"
+      method="POST"
+    >
       <Flex padding="0">
-        <StyledFlex>
+        {/* <StyledFlex>
           <Label name="phone" htmlFor="phone">
             Phone
           </Label>
@@ -127,6 +119,18 @@ export const ContactForm = () => {
             name="phone"
             type="tel"
             value={state.phone || ""}
+            required
+          />
+        </StyledFlex> */}
+        <StyledFlex justifyContent="flex-start">
+          <Label name="name" htmlFor="name">
+            Name
+          </Label>
+          <Input
+            onChange={e => onChange(e)}
+            name="name"
+            type="text"
+            value={state.name || ""}
             required
           />
         </StyledFlex>
@@ -143,7 +147,7 @@ export const ContactForm = () => {
           />
         </StyledFlex>
       </Flex>
-      <Flex justifyContent="flex-start">
+      {/* <Flex justifyContent="flex-start">
         <Label name="subject" htmlFor="subject">
           Subject
         </Label>
@@ -154,7 +158,7 @@ export const ContactForm = () => {
           value={state.subject || ""}
           required
         />
-      </Flex>
+      </Flex> */}
       <Flex justifyContent="flex-start">
         <Label name="message" htmlFor="message">
           Your Message
