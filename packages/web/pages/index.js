@@ -176,7 +176,7 @@ const Index = props => {
           </Infosection>
           <Feature
             reverse
-            background='url("assets/images/blue-wave-1.png") no-repeat left bottom/cover'
+            background='url("assets/images/blue-wave.png") no-repeat left bottom/cover'
             gridArea="maintenance"
             title="Our Standards"
             subtitle="Our maintenance comes with the highest industry standards"
