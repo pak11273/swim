@@ -161,7 +161,7 @@ const Services = props => {
           <ScrollTop id="scrollTop" scrollToTop={scrollToTop} />
           <MastheadServices
             gridArea="masthead"
-            background='white url("assets/images/michael-monahan-n2YxstZulPo-unsplash.jpg") center/cover'
+            background='white url("assets/images/services_header.jpg") center/cover'
           >
             <Flex
               margin="100px 20px"

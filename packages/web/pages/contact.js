@@ -6,8 +6,7 @@ const StyledMasthead = styled(Section)`
   height: 900px;
   padding: 0 20px;
   overflow: hidden;
-  background: lightgray
-    url("assets/images/darren-miller-F0MmnUS2fwc-unsplash.jpg") center/cover;
+  background: lightgray url("assets/images/contact_header.jpg") center/cover;
   grid-area: ${props => props.gridArea};
   align-items: center;
   justify-content: center;
@@ -19,7 +18,7 @@ const StyledMap = styled(Section)`
   ${props => props.theme.mq.sm`
     padding: 0 80px;
   `}
-  background: url("assets/images/gray-map.jpg") center/cover;
+  background: url("assets/images/gray-map-v2.jpg") center/cover;
   background-attachment: fixed;
 `
 const Contact = props => (
