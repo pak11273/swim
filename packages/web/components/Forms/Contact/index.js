@@ -66,8 +66,7 @@ export const ContactForm = () => {
       message: state.message,
     }
 
-    // let url = "https://swim-api.pak11273.now.sh/api"
-    let url = "https://swim-api.pak11273.now.sh/api/contact"
+    let url = "https://swim-api.pak11273.now.sh/api"
     // let url = "http://localhost:5000/api/contact"
 
     axios

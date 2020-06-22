@@ -32,40 +32,6 @@ app.use(cors())
 
 app.use("/", indexRouter)
 app.use("/users", usersRouter)
-app.post("/api/contact", (req, res) => {
-  var data = req.body
-
-  // node-mailer
-  var smtpTransport = nodemailer.createTransport({
-    service: "Gmail",
-    port: 465,
-    auth: {
-      user: process.env.GMAIL_USERNAME, // "USERNAME"
-      pass: process.env.GMAIL_PASSWORD, // "PASSWORD"
-    },
-  })
-
-  var mailOptions = {
-    from: data.email,
-    to: "dppoolserv@gmail.com",
-    subject: data.subject,
-    html: `<h2>Contact Name: ${data.name}</h2>
-          <h2>Phone: ${data.phone}</h2>
-          <h4>Subject: ${data.subject}</h4>
-          <h4>Email: ${data.email}</h4>
-          <h4>Message: ${data.message}</h4>`,
-  }
-
-  smtpTransport.sendMail(mailOptions, (error, response) => {
-    if (error) {
-      res.send(`ERROR: ${error}`)
-    } else {
-      res.json({ email: "Success" })
-    }
-    smtpTransport.close()
-  })
-})
-// eof node-mailer
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
