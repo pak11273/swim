@@ -68,7 +68,7 @@ function SignIn() {
         />
         <button type="submit">Sign in</button> or{" "}
         <Link href="signup">
-          <a>Sign up</a>
+          <a>Sign Up</a>
         </Link>
       </form>
     </>
