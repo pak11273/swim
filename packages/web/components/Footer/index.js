@@ -164,7 +164,7 @@ export const Footer = props => {
               <Title>Mail</Title>
               <ul>
                 <li>
-                  <StyledText>support@dppoolservive.net</StyledText>
+                  <StyledText>support@dppoolservice.net</StyledText>
                 </li>
                 <li>
                   <StyledText>24x7 online support</StyledText>
